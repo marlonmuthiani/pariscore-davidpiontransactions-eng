@@ -164,23 +164,7 @@ export function TopStrategiesTable({
       </div>
 
       <div className="w-full text-[13px]">
-        {/* Header colonnes — desktop uniquement */}
-        <div
-          className="hidden items-center px-3 py-2 text-[11px] font-medium uppercase tracking-wider md:grid"
-          style={{
-            gridTemplateColumns: "minmax(0,1fr) auto minmax(90px,auto) 28px",
-            color: C.time,
-            borderBottom: `1px solid ${C.rowSep}`,
-          }}
-        >
-          <span>Match</span>
-          <span className="px-3">Valeur</span>
-          <span className="px-3">Cote</span>
-          <span className="w-7 text-center">→</span>
-        </div>
-
-        {/* Lignes — carte empilée sur mobile, grille sur desktop */}
-        {rows.map((row, i) => {
+        {rows.map((row) => {
           const band = row.probPct != null ? confidenceBand(row.probPct) : null;
           const highlighted = highlightId != null && row.matchId === highlightId;
           const clickable = onOpenMatch != null;
@@ -201,134 +185,147 @@ export function TopStrategiesTable({
                 },
               }
             : {};
+          // Carte isolée — même structure que les cartes du calendrier
+          // (fotmob-calendar-table.tsx) : en-tête ligue/heure, équipes empilées,
+          // séparateur vertical, pavé de cote à droite. Données inchangées.
           return (
             <div
               key={`${strategy}-${row.matchId}`}
               data-match-id={row.matchId}
               {...interactiveProps}
               className={cn(
-                "flex flex-col gap-1 px-3 py-2 transition-colors hover:bg-[#f8f8f8] md:grid md:items-center md:gap-0",
-                clickable && "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#00985f]",
+                "mb-2 rounded-xl border p-3 shadow-sm transition-all duration-200 hover:border-[#c8c8c8]",
+                clickable && "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00985f]",
                 row.muted && "opacity-60",
               )}
               style={{
-                gridTemplateColumns: "minmax(0,1fr) auto minmax(90px,auto) 28px",
-                borderBottom: i < rows.length - 1 ? `1px solid ${C.rowSep}` : undefined,
-                backgroundColor: highlighted ? `${C.accent}14` : undefined,
+                borderColor: C.cardBorder,
+                backgroundColor: highlighted ? `${C.accent}14` : C.card,
               }}
             >
-              {/* Match */}
-              <div className="flex min-w-0 items-center gap-2">
-                {row.leagueLogo && (
-                  <img
-                    src={row.leagueLogo}
-                    alt=""
-                    width={16}
-                    height={16}
-                    loading="lazy"
-                    className="h-4 w-4 shrink-0 rounded object-contain"
-                    onError={(e) => {
-                      // URL morte (seed périmé) : masquer plutôt qu'icône cassée.
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
-                  />
-                )}
-                <div className="min-w-0">
-                  <div
-                    className="flex min-w-0 items-center gap-1.5 truncate font-semibold"
-                    style={{ color: C.team }}
-                  >
-                    <TeamLogo src={row.home.logo} name={row.home.teamName} />
-                    <span className="truncate">{row.home.teamName}</span>
-                    <span className="shrink-0 font-normal" style={{ color: C.time }}>
-                      vs
-                    </span>
-                    <TeamLogo src={row.away.logo} name={row.away.teamName} />
-                    <span className="truncate">{row.away.teamName}</span>
-                  </div>
-                  <div className="truncate text-[11px] font-medium" style={{ color: C.time }}>
+              {/* En-tête : ligue · horodatage, tendance à droite. */}
+              <div className="mb-2 flex items-center justify-between gap-2">
+                <span className="flex min-w-0 items-center gap-1.5 truncate text-[11px] font-medium" style={{ color: C.time }}>
+                  {row.leagueLogo && (
+                    <img
+                      src={row.leagueLogo}
+                      alt=""
+                      width={14}
+                      height={14}
+                      loading="lazy"
+                      className="h-3.5 w-3.5 shrink-0 rounded object-contain"
+                      onError={(e) => {
+                        // URL morte (seed périmé) : masquer plutôt qu'icône cassée.
+                        (e.target as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  )}
+                  <span className="truncate">
                     {row.league} · {kickoffLabel(row.kickoff)}
+                  </span>
+                </span>
+                <TrendIcon trend={row.trend} />
+              </div>
+
+              {/* Corps : équipes empilées | séparateur | valeur + pavé cote. */}
+              <div className="flex items-stretch gap-3">
+                <div className="flex min-w-0 flex-1 flex-col justify-center gap-2">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <TeamLogo src={row.home.logo} name={row.home.teamName} />
+                    <span className="truncate text-[14px] font-semibold" style={{ color: C.team }}>
+                      {row.home.teamName}
+                    </span>
                   </div>
+                  <div className="flex min-w-0 items-center gap-2">
+                    <TeamLogo src={row.away.logo} name={row.away.teamName} />
+                    <span className="truncate text-[14px] font-semibold" style={{ color: C.team }}>
+                      {row.away.teamName}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Séparateur vertical de la maquette. */}
+                <div aria-hidden className="w-px shrink-0" style={{ backgroundColor: C.cardBorder }} />
+
+                <div className="flex shrink-0 items-center gap-2">
+                  {/* Valeur — vraie valeur moteur, jamais un λ figé */}
+                  {band ? (
+                    <span
+                      title={`Confiance ${band.label}`}
+                      className={cn(
+                        "inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold tabular-nums",
+                        band.cls,
+                      )}
+                    >
+                      {row.display}
+                    </span>
+                  ) : (
+                    <span
+                      className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#f5f5f5] px-2 py-0.5 text-[11px] font-semibold tabular-nums"
+                      style={{ color: C.team }}
+                    >
+                      {row.display}
+                    </span>
+                  )}
+                  {/* Pavé cote — même style que les pavés 1N2 du calendrier. */}
+                  {row.odds != null ? (
+                    <div
+                      className="flex min-w-[58px] flex-col items-center rounded-lg bg-[#f2f2f2] px-3 py-1.5 text-center transition-colors hover:bg-[#e8f5ef]"
+                      title={row.oddsLabel ? `${row.oddsLabel} — cote réelle` : "Cote réelle"}
+                    >
+                      <span className="text-[9px] font-medium uppercase tracking-wide" style={{ color: C.time }}>
+                        {row.oddsLabel ?? "Cote"}
+                      </span>
+                      <span className="font-mono text-[13px] font-bold tabular-nums" style={{ color: C.score }}>
+                        {row.odds.toFixed(2)}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="min-w-[58px] px-3 text-center text-[12px]" style={{ color: C.time }}>—</span>
+                  )}
                 </div>
               </div>
 
-              {/* Valeur — vraie valeur moteur, jamais un λ figé */}
-              <div className="flex items-center gap-1.5 px-0 md:px-3">
-                {band ? (
-                  <span
-                    title={`Confiance ${band.label}`}
-                    className={cn(
-                      "inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold tabular-nums",
-                      band.cls,
-                    )}
-                  >
-                    {row.display}
-                  </span>
-                ) : (
-                  <span
-                    className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#f5f5f5] px-2 py-0.5 text-[11px] font-semibold tabular-nums"
-                    style={{ color: C.team }}
-                  >
-                    {row.display}
-                  </span>
-                )}
-                {row.sourceLabel && (
-                  <span
-                    title={row.sourceLabel === "cotes" ? "Valeur dérivée des cotes (pas de forme L5)" : "Valeur dérivée de la forme L5"}
-                    className="inline-flex items-center rounded-full bg-[#f5f5f5] px-1.5 py-px text-[9px] font-medium"
-                    style={{ color: C.time }}
-                  >
-                    {row.sourceLabel}
-                  </span>
-                )}
-                {row.note && (
-                  <span
-                    className="inline-flex items-center rounded-full bg-[#f0f0f0] px-1.5 py-px text-[9px] font-medium"
-                    style={{ color: C.time }}
-                  >
-                    {row.note}
-                  </span>
-                )}
-                {row.overPick && (
-                  <span
-                    title="Over 21,5 jeux — probabilité Markov ≥ 60 %"
-                    className="inline-flex items-center rounded-full bg-[#00985f]/10 px-1.5 py-px text-[9px] font-bold"
-                    style={{ color: "#00985f" }}
-                  >
-                    {row.overPick}
-                  </span>
-                )}
-                {row.serveEdge && (
-                  <span
-                    title="Meilleur serveur (hold %) et receveur (retour %)"
-                    className="inline-flex items-center rounded-full bg-[#f0f0f0] px-1.5 py-px text-[9px] font-medium tabular-nums"
-                    style={{ color: C.time }}
-                  >
-                    {row.serveEdge}
-                  </span>
-                )}
-              </div>
-
-              {/* Cote enrichie */}
-              <div className="px-0 md:px-3">
-                {row.odds != null ? (
-                  <span className="font-mono text-[13px] tabular-nums" style={{ color: C.score }}>
-                    {row.odds.toFixed(2)}
-                    {row.oddsLabel && (
-                      <span className="ml-1 font-sans text-[10px]" style={{ color: C.time }}>
-                        {row.oddsLabel}
-                      </span>
-                    )}
-                  </span>
-                ) : (
-                  <span className="text-[12px]" style={{ color: C.time }}>—</span>
-                )}
-              </div>
-
-              {/* Tendance */}
-              <div className="hidden w-7 justify-center md:flex">
-                <TrendIcon trend={row.trend} />
-              </div>
+              {/* Tags secondaires — sous le corps, comme les pills du calendrier. */}
+              {(row.sourceLabel || row.note || row.overPick || row.serveEdge) && (
+                <div className="mt-2 flex flex-wrap items-center gap-1">
+                  {row.sourceLabel && (
+                    <span
+                      title={row.sourceLabel === "cotes" ? "Valeur dérivée des cotes (pas de forme L5)" : "Valeur dérivée de la forme L5"}
+                      className="inline-flex items-center rounded-full bg-[#f5f5f5] px-1.5 py-px text-[9px] font-medium"
+                      style={{ color: C.time }}
+                    >
+                      {row.sourceLabel}
+                    </span>
+                  )}
+                  {row.note && (
+                    <span
+                      className="inline-flex items-center rounded-full bg-[#f0f0f0] px-1.5 py-px text-[9px] font-medium"
+                      style={{ color: C.time }}
+                    >
+                      {row.note}
+                    </span>
+                  )}
+                  {row.overPick && (
+                    <span
+                      title="Over 21,5 jeux — probabilité Markov ≥ 60 %"
+                      className="inline-flex items-center rounded-full bg-[#00985f]/10 px-1.5 py-px text-[9px] font-bold"
+                      style={{ color: "#00985f" }}
+                    >
+                      {row.overPick}
+                    </span>
+                  )}
+                  {row.serveEdge && (
+                    <span
+                      title="Meilleur serveur (hold %) et receveur (retour %)"
+                      className="inline-flex items-center rounded-full bg-[#f0f0f0] px-1.5 py-px text-[9px] font-medium tabular-nums"
+                      style={{ color: C.time }}
+                    >
+                      {row.serveEdge}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
           );
         })}
