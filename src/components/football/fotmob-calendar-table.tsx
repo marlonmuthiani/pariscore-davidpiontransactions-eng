@@ -157,15 +157,45 @@ function TopStratPills({ tags, onSelect }: { tags: TopStratTag[]; onSelect?: (ta
   );
 }
 
-/* ─── Ligne match (clic → analyse, étoile isolée via stopPropagation) ─── */
+/* ─── Carte match — design « cartes isolées » (équipes empilées + séparateur) ───
+   La forme vient de la maquette demandée : une carte PAR match, en-tête heure/état,
+   équipes empilées verticalement avec logo, séparateur vertical, zone droite pour
+   les pills Top et l'étoile. Les pavés de cotes de la maquette ne sont PAS rendus :
+   FotmobCalMatch ne porte aucune cote, et inventer un bloc vide serait pire que
+   de ne pas l'afficher. Données inchangées — pure présentation. */
 function FotmobMatchRow({ m, onSelect, onTeamClick, topTags, onTopPillSelect }: { m: FotmobCalMatch; onSelect?: (m: FotmobCalMatch) => void; onTeamClick?: (team: FotmobCalTeam, venue: "home" | "away", leagueId?: string) => void; topTags?: TopStratTag[]; onTopPillSelect?: (tag: TopStratTag) => void }) {
   const st = m.live?.status ?? null;
   const live = isLiveStatus(st);
   const finished = st === "FT";
   const showScore = (live || finished) && m.live?.homeScore != null && m.live?.awayScore != null;
   const label = `${m.home.name} - ${m.away.name}`;
+
+  const teamButton = (team: FotmobCalTeam, venue: "home" | "away") => {
+    const group = venue === "home" ? "group/home" : "group/away";
+    const align = venue === "home" ? "items-end" : "items-start";
+    const inner = (
+      <>
+        <img src={teamLogo(team.name, team.logo)} alt="" width="22" height="22" loading="lazy" className="size-[22px] shrink-0 transition-transform duration-200 group-hover:scale-110" />
+        <span className={`flex min-w-0 flex-col ${align}`}>
+          <span className="truncate text-[14px] font-semibold transition-colors duration-200 group-hover:text-emerald-700" style={{ color: C.team }}>{team.name}</span>
+          {m.power?.[venue] != null && <PowerScoreBar score={m.power[venue]!} />}
+        </span>
+      </>
+    );
+    if (!onTeamClick) return <div className={`flex min-w-0 items-center gap-2 ${inner ? "" : ""}`}>{inner}</div>;
+    return (
+      <button
+        type="button"
+        onClick={(e) => { e.stopPropagation(); onTeamClick(team, venue, m.league?.id ? String(m.league.id) : undefined); }}
+        className={`flex min-w-0 items-center gap-2 rounded-lg px-1 py-0.5 cursor-pointer transition-all duration-200 hover:bg-emerald-50 hover:shadow-[inset_0_-2px_0_0_#34d399] ${group}`}
+      >
+        {inner}
+      </button>
+    );
+  };
+
   return (
-    <div style={{ backgroundColor: C.card, borderBottom: `1px solid ${C.rowSep}` }}>
+    <div style={{ backgroundColor: C.card }}>
     <div
       data-testid="livescores-match"
       role={onSelect ? "button" : undefined}
@@ -173,94 +203,61 @@ function FotmobMatchRow({ m, onSelect, onTeamClick, topTags, onTopPillSelect }: 
       aria-label={onSelect ? label : undefined}
       onClick={onSelect ? () => onSelect(m) : undefined}
       onKeyDown={onSelect ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(m); } } : undefined}
-      // Rythme de ligne aligné sur `top-strategies-table.tsx` : même padding vertical,
-      // même survol, même texte de base. Les couleurs étaient déjà identiques — c'est
-      // la DENSITÉ qui faisait qu'un onglet paraissait moins soigné que l'autre.
-      className={cn(ROW_CLASSES, "grid items-center gap-1 text-[13px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00985f]")}
-      style={{
-        gridTemplateColumns: "1fr auto auto 1fr auto",
-      }}
+      className={cn(
+        "m-2 rounded-xl border p-3 shadow-sm transition-all duration-200 hover:border-[#c8c8c8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00985f]",
+      )}
+      style={{ borderColor: C.cardBorder }}
     >
-      <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5">
-        {onTeamClick ? (
-          <button
-            type="button"
-            onClick={(e) => { e.stopPropagation(); onTeamClick(m.home, "home", m.league?.id ? String(m.league.id) : undefined); }}
-            className="flex min-w-0 items-center gap-1.5 rounded-lg px-1 py-0.5 -mx-1 cursor-pointer transition-all duration-200 hover:bg-emerald-50 hover:shadow-[inset_0_-2px_0_0_#34d399] group/home"
-          >
-            <span className="flex min-w-0 flex-col items-end">
-              <span className="truncate text-right text-[14px] font-semibold transition-colors duration-200 group-hover/home:text-emerald-700" style={{ color: C.team }}>{m.home.name}</span>
-              {m.power?.home != null && <PowerScoreBar score={m.power.home} />}
+      {/* En-tête : heure / état à droite, minute live à gauche du score. */}
+      <div className="mb-2 flex items-center justify-between gap-2">
+        <div className="flex min-w-0 items-center gap-2">
+          {live && m.live?.minute != null && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#00985f]/10 px-2 py-0.5 text-[10px] font-bold tabular-nums" style={{ color: C.accent }}>
+              {m.live.minute}’
             </span>
-            <img src={teamLogo(m.home.name, m.home.logo)} alt="" width="22" height="22" loading="lazy" className="size-[22px] shrink-0 transition-transform duration-200 group-hover/home:scale-110" />
-          </button>
-        ) : (
-          <>
-            <span className="flex min-w-0 flex-col items-end">
-              <span className="truncate text-right text-[14px]" style={{ color: C.team }}>{m.home.name}</span>
-              {m.power?.home != null && <PowerScoreBar score={m.power.home} />}
+          )}
+          {finished && (
+            <span className="rounded-full bg-[#f0f0f0] px-2 py-0.5 text-[10px] font-semibold" style={{ color: C.reason }}>
+              FM
             </span>
-            <img src={teamLogo(m.home.name, m.home.logo)} alt="" width="22" height="22" loading="lazy" className="size-[22px] shrink-0" />
-          </>
-        )}
-      </div>
-      <span
-        className="w-7 shrink-0 text-center text-[12px] font-medium tabular-nums"
-        style={{ color: live ? C.live : C.reason }}
-        title={finished ? "Fin du match" : live ? "En direct" : undefined}
-      >
-        {live && m.live?.minute != null ? `${m.live.minute}` : finished ? "FM" : ""}
-      </span>
-      <div className="flex w-14 shrink-0 flex-col items-center tabular-nums">
-        {showScore ? (
-          <>
-            <span data-testid="status-score" className="text-[14px] font-medium" style={{ color: live ? C.live : C.score }}>
-              {m.live!.homeScore} - {m.live!.awayScore}
-            </span>
-            {live && m.live?.minute != null ? (
-              <span data-testid="status-live" className="text-[12px] font-medium" style={{ color: C.live }}>
-                {m.live.minute}’
-              </span>
-            ) : live ? (
-              <span data-testid="status-live" className="text-[12px] font-medium" style={{ color: C.live }}>
-                {m.live?.label ?? "LIVE"}
-              </span>
-            ) : finished ? (
-              <span data-testid="status-reason" className="text-[12px]" style={{ color: C.reason }}>FM</span>
-            ) : null}
-          </>
-        ) : (
-          <span data-testid="status-time" className="text-[14px] font-semibold tabular-nums" style={{ color: C.time }}>
+          )}
+        </div>
+        {!showScore && (
+          <span data-testid="status-time" className="text-[12px] font-semibold tabular-nums" style={{ color: C.time }}>
             {parisKickoff(m.scheduledAt)}
           </span>
         )}
       </div>
-      <div className="flex min-w-0 flex-1 items-center gap-1.5">
-        {onTeamClick ? (
-          <button
-            type="button"
-            onClick={(e) => { e.stopPropagation(); onTeamClick(m.away, "away", m.league?.id ? String(m.league.id) : undefined); }}
-            className="flex min-w-0 flex-1 items-center gap-1.5 rounded-lg px-1 py-0.5 -mx-1 cursor-pointer transition-all duration-200 hover:bg-emerald-50 hover:shadow-[inset_0_-2px_0_0_#34d399] group/away"
-          >
-            <img src={teamLogo(m.away.name, m.away.logo)} alt="" width="22" height="22" loading="lazy" className="size-[22px] shrink-0 transition-transform duration-200 group-hover/away:scale-110" />
-            <span className="flex min-w-0 flex-col items-start">
-              <span className="truncate text-[14px] font-semibold transition-colors duration-200 group-hover/away:text-emerald-700" style={{ color: C.team }}>{m.away.name}</span>
-              {m.power?.away != null && <PowerScoreBar score={m.power.away} />}
-            </span>
-          </button>
-        ) : (
-          <>
-            <img src={teamLogo(m.away.name, m.away.logo)} alt="" width="22" height="22" loading="lazy" className="size-[22px] shrink-0" />
-            <span className="flex min-w-0 flex-col items-start">
-              <span className="truncate text-[14px] font-semibold" style={{ color: C.team }}>{m.away.name}</span>
-              {m.power?.away != null && <PowerScoreBar score={m.power.away} />}
-            </span>
-          </>
-        )}
+
+      {/* Corps : équipes empilées | séparateur | zone droite. */}
+      <div className="flex items-stretch gap-3">
+        <div className="flex min-w-0 flex-1 flex-col justify-center gap-2">
+          {teamButton(m.home, "home")}
+          {showScore && (
+            <div className="flex items-center gap-2" aria-label={label}>
+              <span data-testid="status-score" className="text-[15px] font-semibold tabular-nums" style={{ color: live ? C.live : C.score }}>
+                {m.live!.homeScore} - {m.live!.awayScore}
+              </span>
+              {live && (
+                <span data-testid="status-live" className="text-[11px] font-medium" style={{ color: C.live }}>
+                  {m.live?.label ?? "LIVE"}
+                </span>
+              )}
+            </div>
+          )}
+          {teamButton(m.away, "away")}
+        </div>
+
+        {/* Séparateur vertical de la maquette. */}
+        <div aria-hidden className="w-px shrink-0" style={{ backgroundColor: C.cardBorder }} />
+
+        <div className="flex shrink-0 flex-col items-center justify-center gap-1.5">
+          <FotmobFollowStar id={m.id} name={label} />
+        </div>
       </div>
-      <FotmobFollowStar id={m.id} name={label} />
+
+      <TopStratPills tags={topTags ?? []} onSelect={onTopPillSelect ?? (onSelect ? () => onSelect(m) : undefined)} />
     </div>
-    <TopStratPills tags={topTags ?? []} onSelect={onTopPillSelect ?? (onSelect ? () => onSelect(m) : undefined)} />
     </div>
   );
 }
