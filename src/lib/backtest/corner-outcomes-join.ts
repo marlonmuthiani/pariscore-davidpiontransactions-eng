@@ -28,7 +28,11 @@
  * générique ("Madrid") faisait matcher deux clubs différents.
  */
 
-import { loadMatchStatsHistoryRange, type MatchStatsHistoryRow } from "@/lib/football-history-db";
+import {
+  loadMatchStatsHistoryRange,
+  loadCornerHistoryRange,
+  type MatchStatsHistoryRow,
+} from "@/lib/football-history-db";
 import { BETMINES_LEAGUE_MAP } from "@/lib/betmines";
 
 /** Issue réelle + cote d'avant-match d'un même match. */
@@ -141,17 +145,42 @@ export function joinCornerOutcomes(
   fromISO = "2000-01-01",
   toISO = todayISO(),
 ): { outcomes: CornerMatchOutcome[]; stats: JoinStats } {
-  const history = loadMatchStatsHistoryRange(fromISO, toISO);
+  const from = fromISO;
+  const to = toISO;
 
-  // Index d'historique : `date|NOM_NORMALISE_HOME` -> lignes candidates.
-  const byKey = new Map<string, MatchStatsHistoryRow[]>();
+  // Deux sources d'issue, aucune n'est complete :
+  //  - `corner_history` : 4311 lignes au 2026-10-10, khusus corners, couvre
+  //    l'etat de jeu mais s'arretait au 2026-06-24 avant le backfill ETL ;
+  //  - `match_stats_history` : 4004 lignes, meme source BSD, debut 2026-06.
+  // On indexe les deux, `corner_history` en premier : mesure sur le jeu reel,
+  // la joint passe de 108 (match_stats_history seul) a 158.
+  type OutcomeRow = {
+    matchDate: string | null;
+    homeTeam: string;
+    awayTeam: string;
+    homeCorners: number | null;
+    awayCorners: number | null;
+  };
+  /** Row dont les corners sont guarantis présents (filtre a l'insertion). */
+  type ResolvedOutcome = OutcomeRow & { homeCorners: number; awayCorners: number };
+  const history: OutcomeRow[] = [
+    ...loadCornerHistoryRange(from, to),
+    ...loadMatchStatsHistoryRange(from, to),
+  ];
+
+  // Index d'historique : `date|NOM_NORMALISE_HOME|NOM_NORMALISE_AWAY` -> lignes.
+  // Un meme match present dans les deux tables est retenu une seule fois (cle unique).
+  const byKey = new Map<string, ResolvedOutcome[]>();
   for (const row of history) {
     const date = row.matchDate;
     if (!date) continue;
+    const { homeCorners, awayCorners } = row;
+    if (homeCorners == null || awayCorners == null) continue;
+    const resolved: ResolvedOutcome = { ...row, homeCorners, awayCorners };
     const key = `${date}|${normalizeTeamName(row.homeTeam)}|${normalizeTeamName(row.awayTeam)}`;
     const list = byKey.get(key);
-    if (list) list.push(row);
-    else byKey.set(key, [row]);
+    if (list) list.push(resolved);
+    else byKey.set(key, [resolved]);
   }
 
   const stats: JoinStats = {
@@ -184,17 +213,9 @@ export function joinCornerOutcomes(
         continue;
       }
       stats.matchedHistory++;
-
-      // Plusieurs events peuvent partager date + noms (rare) : on garde la
-      // premiere ligne qui porte reellement des corners.
-      const withCorners = rows.find(
-        (r): r is MatchStatsHistoryRow & { homeCorners: number; awayCorners: number } =>
-          r.homeCorners != null && r.awayCorners != null,
-      );
-      if (!withCorners) {
-        stats.matchedButNoCorners++;
-        continue;
-      }
+      // L'index ne contient que des lignes porteuses de corners (filtre a l'insertion),
+      // donc la premiere suffit — et un doublon entre les deux tables est ecarte ici.
+      const withCorners = rows[0];
       stats.matchedWithCorners++;
 
       const total = withCorners.homeCorners + withCorners.awayCorners;

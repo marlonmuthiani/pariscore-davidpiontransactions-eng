@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { readdirSync, readFileSync } from "node:fs";
+import path from "node:path";
 import { fetchBSDFootballFinishedRange } from "@/lib/bsd-football-fetcher";
 import { runMarketBacktest } from "@/lib/football-backtest/market-engine";
 import { parseWindow } from "@/lib/football-results";
 import { loadTop5Entries } from "@/lib/top5-backtest/store";
 import { createTtlCache, isFresh, type TtlCacheEntry } from "@/lib/cached-route";
+import { runCornersBacktest } from "@/lib/backtest/corners-backtest";
+import type { BetminesFixtureInput } from "@/lib/backtest/corner-outcomes-join";
 
 /**
  * GET /api/football/backtest/markets?from=YYYY-MM-DD&to=YYYY-MM-DD
@@ -74,9 +78,55 @@ export async function GET(req: NextRequest) {
 
   // 3. Rejeu walk-forward par marché.
   const payload = runMarketBacktest({ entries, matchesById, from, to });
+
+  // 4. Marchés corners — chemin DIFFÉRENT : les archives BetMines (cotes
+  //    d'avant-match) jointes aux issues réelles. Ils ne passent pas par le
+  //    journal Top 5, qui n'a produit aucun pick sur ces marchés (ils étaient
+  //    bloqués) : `runMarketBacktest` y afficherait 0 pari.
+  let corners: ReturnType<typeof runCornersBacktest> | null = null;
+  try {
+    corners = runCornersBacktest(loadBetminesFixtures());
+  } catch (err) {
+    warnings.push(`BetMines : ${(err as Error).message}`);
+  }
+
   // `league` demandé par le client : la liste des ligues reste celle de la fenêtre
   // entière, sinon le sélecteur perdrait ses options (voir commentaire plus haut).
-  const body = { ...payload, warnings, leagues };
+  const body = { ...payload, warnings, leagues, corners };
   cache.set(body);
   return NextResponse.json(body, { headers: CACHE_HEADERS });
+}
+
+/**
+ * Charge les fixtures BetMines depuis `public/data/betmines/{leagueId}.json`.
+ *
+ * Lecture tolérante : un fichier illisible ou absent est ignoré plutôt que de
+ * faire échouer l'onglet entier. Le backtest corners affiche alors un
+ * échantillon plus faible — visible, jamais silencieux.
+ */
+function loadBetminesFixtures(): Map<number, BetminesFixtureInput[]> {
+  const dir = path.join(process.cwd(), "public", "data", "betmines");
+  const out = new Map<number, BetminesFixtureInput[]>();
+  let names: string[];
+  try {
+    names = readdirSync(dir);
+  } catch {
+    return out;
+  }
+  for (const name of names) {
+    if (!name.endsWith(".json") || name === "catalog.json") continue;
+    const id = Number(name.replace(".json", ""));
+    if (!Number.isFinite(id)) continue;
+    try {
+      const data = JSON.parse(readFileSync(path.join(dir, name), "utf-8")) as {
+        fixtures?: BetminesFixtureInput[];
+      };
+      if (Array.isArray(data.fixtures) && data.fixtures.length > 0) {
+        out.set(id, data.fixtures);
+      }
+    } catch {
+      /* fichier illisible : ignore */
+    }
+  }
+  return out;
 }

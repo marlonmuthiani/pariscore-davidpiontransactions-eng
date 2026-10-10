@@ -16,6 +16,19 @@ import {
 } from "@/components/ui/select";
 import { leagueCountryOf } from "@/lib/league-mapping";
 import { CountryFlag } from "@/components/ui/country-flag";
+import type { CornersMarketBacktest } from "@/lib/backtest/corners-backtest";
+import type { BetminesFixtureInput } from "@/lib/backtest/corner-outcomes-join";
+
+/** Payload renvoyé par /api/football/backtest/markets. */
+type MarketsPayload = MarketBacktestResult & {
+  warnings?: string[];
+  /** Noms de ligues (le pays est résolu côté client par leagueCountryOf). */
+  leagues?: string[];
+  /** Backtest corners — chemin distinct du journal Top 5 (voir corners-backtest.ts). */
+  corners?: {
+    markets: Record<"over65Corners" | "under115Corners", CornersMarketBacktest>;
+  } | null;
+};
 
 /**
  * Libellé du groupe des ligues dont le pays n'est pas dans `LEAGUE_COUNTRY_BY_NAME`
@@ -185,6 +198,111 @@ function MarketCard({ m }: { m: MarketBacktest }) {
   );
 }
 
+/**
+ * Provenance de l'échantillon corners — affichée AVEC le ROI, jamais à côté
+ * d'un pourcentage nu.
+ *
+ * Au 2026-10-10 l'échantillon dépasse le seuil mais couvre une seule semaine
+ * (les fixtures BetMines disponibles viennent d'un unique scrape). Un ROI sans
+ * cette mention se lirait comme une mesure fiable alors que c'est du bruit.
+ */
+function CornersSampleNote({ m }: { m: CornersMarketBacktest }) {
+  const { joined, from, to } = m.sample;
+  const days = (() => {
+    if (!from || !to) return null;
+    const d = Math.round((Date.parse(to) - Date.parse(from)) / 86_400_000) + 1;
+    return d;
+  })();
+  return (
+    <p className="text-[10px] leading-snug" style={{ color: C.time }}>
+      {m.n} matchs jointes sur {joined} appariées
+      {days != null ? ` · fenêtre de ${days} jour${days > 1 ? "s" : ""}` : ""}
+      {from && to ? ` (${from} → ${to})` : ""} · cotes BetMines, mise plate 1u
+    </p>
+  );
+}
+
+/** Carte corners débloquée : ROI, P&L, taux de réussite, courbe. */
+function CornersMarketCard({ m }: { m: CornersMarketBacktest }) {
+  return (
+    <div
+      className="flex flex-col gap-2 rounded-2xl p-4"
+      style={{ background: C.card, border: `1px solid ${C.cardBorder}` }}
+      data-testid={`market-corners-${m.key}`}
+    >
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-[13px] font-semibold" style={{ color: C.team }}>
+          {m.label}
+        </span>
+        <SourceBadge label="Cote BSD réelle" derived={false} />
+      </div>
+
+      <div className="grid grid-cols-4 gap-2">
+        <div>
+          <div className="text-[10px] uppercase tracking-wider" style={{ color: C.time }}>Paris</div>
+          <div className="font-mono font-semibold" style={{ color: C.team }}>{m.n}</div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-wider" style={{ color: C.time }}>Réussite</div>
+          <div className="font-mono font-semibold" style={{ color: C.team }}>
+            {m.n > 0 ? `${((m.wins / m.n) * 100).toFixed(0)} %` : "—"}
+          </div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-wider" style={{ color: C.time }}>ROI</div>
+          <div className="font-mono font-semibold" style={{ color: pnlColor(m.roiPct ?? 0) }}>
+            {m.roiPct != null
+              ? `${m.roiPct > 0 ? "+" : ""}${m.roiPct.toFixed(1).replace(".", ",")} %`
+              : "—"}
+          </div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-wider" style={{ color: C.time }}>
+            P&amp;L / Drawdown
+          </div>
+          <div className="font-mono font-semibold" style={{ color: pnlColor(m.pnl) }}>
+            {fmtUnits(m.pnl)}
+            <span className="ml-1 font-normal" style={{ color: C.time }}>
+              / {m.maxDrawdown.toFixed(2).replace(".", ",")} u
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <PnlSparkline curve={m.curve} />
+      <CornersSampleNote m={m} />
+    </div>
+  );
+}
+
+/** Carte corners bloquée — motif du seuil, jamais un pourcentage trompeur. */
+function CornersBlockedCard({ m }: { m: CornersMarketBacktest }) {
+  return (
+    <div
+      className="flex flex-col gap-2 rounded-2xl p-4 opacity-90"
+      style={{ background: C.headerBg, border: `1px dashed ${C.cardBorder}` }}
+      data-testid={`market-blocked-${m.key}`}
+    >
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-[13px] font-semibold" style={{ color: C.time }}>
+          {m.label}
+        </span>
+        <span className="inline-flex items-center gap-1 rounded-full border border-[#e0e0e0] bg-[#f0f0f0] px-2 py-0.5 text-[10px] font-semibold text-[#717171]">
+          <Lock className="h-2.5 w-2.5" aria-hidden />
+          Bloqué
+        </span>
+        <span className="text-[10px]" style={{ color: C.time }}>
+          BetMines (non archivé)
+        </span>
+      </div>
+      <p className="text-xs" style={{ color: C.time }}>
+        {m.blockedReason}
+      </p>
+      <CornersSampleNote m={m} />
+    </div>
+  );
+}
+
 function BlockedCard({ m }: { m: MarketCardInfo }) {
   return (
     <div
@@ -212,7 +330,7 @@ function BlockedCard({ m }: { m: MarketCardInfo }) {
 }
 
 export function FootballBacktestingView() {
-  const [data, setData] = useState<MarketBacktestResult | null>(null);
+  const [data, setData] = useState<MarketsPayload | null>(null);
   const [warnings, setWarnings] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -397,6 +515,20 @@ export function FootballBacktestingView() {
             {data.markets.map((m) => (
               <MarketCard key={m.key} m={m} />
             ))}
+            {data.corners?.markets && (
+              <>
+                {data.corners.markets.over65Corners.availability === "available" ? (
+                  <CornersMarketCard m={data.corners.markets.over65Corners} />
+                ) : (
+                  <CornersBlockedCard m={data.corners.markets.over65Corners} />
+                )}
+                {data.corners.markets.under115Corners.availability === "available" ? (
+                  <CornersMarketCard m={data.corners.markets.under115Corners} />
+                ) : (
+                  <CornersBlockedCard m={data.corners.markets.under115Corners} />
+                )}
+              </>
+            )}
             {data.blocked.map((m) => (
               <BlockedCard key={m.key} m={m} />
             ))}
