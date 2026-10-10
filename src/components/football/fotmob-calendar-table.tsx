@@ -33,6 +33,12 @@ export type FotmobCalMatch = {
   live?: FotmobCalLive | null;
   /** PowerScore 0-100 des deux côtés (affiché sous les noms si présent). */
   power?: { home: PowerScore | null; away: PowerScore | null } | null;
+  /**
+   * Cotes 1X2 réelles du bookmaker référencé. Présentes dans le payload de
+   * /api/football/calendar (objets FootballMatch complets) mais longtemps
+   * masquées par ce type « subset » : l'UI ne pouvait pas les afficher.
+   */
+  odds?: { bookmaker?: string; home: number; draw: number; away: number } | null;
 };
 
 /* Palette FotMob clair — source unique dans fotmob-tokens.ts (voir le commentaire de
@@ -157,6 +163,59 @@ function TopStratPills({ tags, onSelect }: { tags: TopStratTag[]; onSelect?: (ta
   );
 }
 
+/* ─── Pavés de cotes 1N2 + Double Chance (design maquette) ───
+   Les cotes 1N2 sont réelles (bookmaker BSD). La Double Chance est dérivée du
+   dé-vig proportionnel — même règle que le registre de backtest (markets.ts) :
+   cote équitable 1/p, jamais une cote inventée. Un pavé absent (donnée
+   manquante ou dégénérée) n'est pas rendu : pas de bloc vide artificiel. */
+function OddsPavés({ odds }: { odds: NonNullable<FotmobCalMatch["odds"]> }) {
+  // Dé-vig proportionnel inline — `devig1x2` de src/lib/football-devig.ts est
+  // encore NON SUIVI par git (session parallèle) : importer un module absent de
+  // HEAD casserait le build du VPS (bug du 2026-10-10, garde pre-push).
+  // ponytail: remplacer par l'import `devig1x2` dès que ce fichier est commité.
+  const probs = (() => {
+    const io = 1 / odds.home, ix = 1 / odds.draw, ia = 1 / odds.away;
+    const vig = io + ix + ia;
+    if (!Number.isFinite(vig) || vig <= 0) return null;
+    return { home: io / vig, draw: ix / vig, away: ia / vig };
+  })();
+  const fair = (p: number | null | undefined): string | null => {
+    if (p == null || p <= 0) return null;
+    const o = 1 / p;
+    return Number.isFinite(o) && o > 1 ? o.toFixed(2) : null;
+  };
+  const dc1x = probs ? fair(probs.home + probs.draw) : null;
+  const dc12 = probs ? fair(probs.home + probs.away) : null;
+  const dc2x = probs ? fair(probs.away + probs.draw) : null;
+
+  const block = (label: string, value: string | null, derived: boolean) => {
+    if (!value) return null;
+    return (
+      <div
+        key={label}
+        className="flex min-w-[58px] flex-col items-center rounded-lg bg-[#f2f2f2] px-3 py-1.5 text-center transition-colors hover:bg-[#e8f5ef]"
+        title={derived ? `${label} — cote équitable dérivée du dé-vig 1X2 (pas une cote bookmaker)` : `${label} — cote ${odds.bookmaker ?? "bookmaker"}`}
+      >
+        <span className="text-[9px] font-medium uppercase tracking-wide" style={{ color: C.time }}>{label}</span>
+        <span className="font-mono text-[13px] font-bold tabular-nums" style={{ color: C.team }}>{value}</span>
+      </div>
+    );
+  };
+
+  const n2 = [block("1", odds.home != null && odds.home > 1 ? odds.home.toFixed(2) : null, false),
+    block("X", odds.draw != null && odds.draw > 1 ? odds.draw.toFixed(2) : null, false),
+    block("2", odds.away != null && odds.away > 1 ? odds.away.toFixed(2) : null, false)].filter(Boolean);
+  const dc = [block("1X", dc1x, true), block("12", dc12, true), block("2X", dc2x, true)].filter(Boolean);
+
+  if (n2.length === 0) return null;
+  return (
+    <div className="flex flex-col gap-1">
+      <div className="flex gap-1">{n2}</div>
+      {dc.length > 0 && <div className="flex gap-1">{dc}</div>}
+    </div>
+  );
+}
+
 /* ─── Carte match — design « cartes isolées » (équipes empilées + séparateur) ───
    La forme vient de la maquette demandée : une carte PAR match, en-tête heure/état,
    équipes empilées verticalement avec logo, séparateur vertical, zone droite pour
@@ -250,6 +309,9 @@ function FotmobMatchRow({ m, onSelect, onTeamClick, topTags, onTopPillSelect }: 
 
         {/* Séparateur vertical de la maquette. */}
         <div aria-hidden className="w-px shrink-0" style={{ backgroundColor: C.cardBorder }} />
+
+        {/* Pavés de cotes 1N2 + Double Chance — seulement quand la donnée existe. */}
+        {m.odds && <OddsPavés odds={m.odds} />}
 
         <div className="flex shrink-0 flex-col items-center justify-center gap-1.5">
           <FotmobFollowStar id={m.id} name={label} />
