@@ -42,6 +42,20 @@ export interface LlmGenerateOptions {
   json?: boolean;
   timeoutMs?: number;
   provider?: LlmProviderMode;
+  /**
+   * Schéma JSON de réponse structurée (Gemini `generationConfig.responseSchema`).
+   * ponytail: déclaré pour le consommateur rapport v2 mais pas encore câblé dans
+   * generateText — silencieusement ignoré aujourd'hui ; v2 retombe sur json:true
+   * + validation zod (dégradation propre). Câblage Gemini = au propriétaire llm.
+   */
+  responseSchema?: Record<string, unknown>;
+  /**
+   * Google Search grounding (outil `google_search` Gemini).
+   * ponytail: idem responseSchema — accepté, pas encore exécuté ; sans
+   * implémentation, `LlmResult.grounding` reste absent et l'appelant v2
+   * poursuit sans extraits (comportement prévu par son catch).
+   */
+  searchGrounding?: boolean;
 }
 
 export interface LlmResult {
@@ -49,6 +63,11 @@ export interface LlmResult {
   provider: "gemini" | "local" | "orcarouter" | "openrouter" | "nvidia" | "groq";
   model: string;
   latencyMs: number;
+  /** Extraits Google Search — présents uniquement si le grounding a produit des résultats. */
+  grounding?: {
+    snippets: string[];
+    sources: { title?: string; uri: string }[];
+  };
 }
 
 import { AppError } from "./api-error";
