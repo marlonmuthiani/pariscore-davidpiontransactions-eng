@@ -1,0 +1,181 @@
+{
+ "league": "laliga",
+ "meta": {
+  "status": "ok",
+  "season": "2026/27",
+  "model": "ExtraTrees(n=300)",
+  "snapshot_frac": 0.182,
+  "snapshot_matches": 69,
+  "expected_matches": 380,
+  "phase": "early",
+  "walkforward": {
+   "spearman_gate": 0.9029,
+   "naive_spearman": 0.9353,
+   "gate_frac": 0.6
+  },
+  "generated_at": "2026-09-23T20:49:18.756773+00:00",
+  "paper": "JISTA 2026 AutoML (doi:10.38016/jista.2000399)"
+ },
+ "teams": [
+  {
+   "team": "Barcelona",
+   "currentRank": 1,
+   "currentPts": 21,
+   "projectedPts": 87.5,
+   "projectedRank": 1,
+   "delta": 0
+  },
+  {
+   "team": "Ath Madrid",
+   "currentRank": 2,
+   "currentPts": 16,
+   "projectedPts": 77.2,
+   "projectedRank": 2,
+   "delta": 0
+  },
+  {
+   "team": "Real Madrid",
+   "currentRank": 4,
+   "currentPts": 15,
+   "projectedPts": 73.1,
+   "projectedRank": 3,
+   "delta": 1
+  },
+  {
+   "team": "Betis",
+   "currentRank": 3,
+   "currentPts": 16,
+   "projectedPts": 66.3,
+   "projectedRank": 4,
+   "delta": -1
+  },
+  {
+   "team": "Sevilla",
+   "currentRank": 5,
+   "currentPts": 13,
+   "projectedPts": 53.4,
+   "projectedRank": 5,
+   "delta": 0
+  },
+  {
+   "team": "Alaves",
+   "currentRank": 6,
+   "currentPts": 11,
+   "projectedPts": 51.7,
+   "projectedRank": 6,
+   "delta": 0
+  },
+  {
+   "team": "Sociedad",
+   "currentRank": 8,
+   "currentPts": 10,
+   "projectedPts": 51.3,
+   "projectedRank": 7,
+   "delta": 1
+  },
+  {
+   "team": "Celta",
+   "currentRank": 14,
+   "currentPts": 7,
+   "projectedPts": 49.1,
+   "projectedRank": 8,
+   "delta": 6
+  },
+  {
+   "team": "La Coruna",
+   "currentRank": 7,
+   "currentPts": 10,
+   "projectedPts": 48.6,
+   "projectedRank": 9,
+   "delta": -2
+  },
+  {
+   "team": "Getafe",
+   "currentRank": 11,
+   "currentPts": 8,
+   "projectedPts": 47.3,
+   "projectedRank": 10,
+   "delta": 1
+  },
+  {
+   "team": "Espanol",
+   "currentRank": 15,
+   "currentPts": 7,
+   "projectedPts": 47.0,
+   "projectedRank": 11,
+   "delta": 4
+  },
+  {
+   "team": "Ath Bilbao",
+   "currentRank": 10,
+   "currentPts": 8,
+   "projectedPts": 46.1,
+   "projectedRank": 12,
+   "delta": -2
+  },
+  {
+   "team": "Vallecano",
+   "currentRank": 12,
+   "currentPts": 8,
+   "projectedPts": 43.8,
+   "projectedRank": 13,
+   "delta": -1
+  },
+  {
+   "team": "Villarreal",
+   "currentRank": 9,
+   "currentPts": 8,
+   "projectedPts": 42.4,
+   "projectedRank": 14,
+   "delta": -5
+  },
+  {
+   "team": "Osasuna",
+   "currentRank": 13,
+   "currentPts": 8,
+   "projectedPts": 39.8,
+   "projectedRank": 15,
+   "delta": -2
+  },
+  {
+   "team": "Elche",
+   "currentRank": 18,
+   "currentPts": 5,
+   "projectedPts": 36.0,
+   "projectedRank": 16,
+   "delta": 2
+  },
+  {
+   "team": "Levante",
+   "currentRank": 17,
+   "currentPts": 5,
+   "projectedPts": 35.9,
+   "projectedRank": 17,
+   "delta": 0
+  },
+  {
+   "team": "Valencia",
+   "currentRank": 19,
+   "currentPts": 4,
+   "projectedPts": 35.0,
+   "projectedRank": 18,
+   "delta": 1
+  },
+  {
+   "team": "Santander",
+   "currentRank": 16,
+   "currentPts": 7,
+   "projectedPts": 34.8,
+   "projectedRank": 19,
+   "delta": -3
+  },
+  {
+   "team": "Malaga",
+   "currentRank": 20,
+   "currentPts": 3,
+   "projectedPts": 32.6,
+   "projectedRank": 20,
+   "delta": 0
+  }
+ ]
+}

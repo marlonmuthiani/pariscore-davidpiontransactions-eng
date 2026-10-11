@@ -1,0 +1,181 @@
+{
+ "league": "epl",
+ "meta": {
+  "status": "ok",
+  "season": "2026/27",
+  "model": "ExtraTrees(n=300)",
+  "snapshot_frac": 0.132,
+  "snapshot_matches": 50,
+  "expected_matches": 380,
+  "phase": "early",
+  "walkforward": {
+   "spearman_gate": 0.9029,
+   "naive_spearman": 0.9353,
+   "gate_frac": 0.6
+  },
+  "generated_at": "2026-09-23T20:49:18.755471+00:00",
+  "paper": "JISTA 2026 AutoML (doi:10.38016/jista.2000399)"
+ },
+ "teams": [
+  {
+   "team": "Brighton",
+   "currentRank": 3,
+   "currentPts": 10,
+   "projectedPts": 83.1,
+   "projectedRank": 1,
+   "delta": 2
+  },
+  {
+   "team": "Man City",
+   "currentRank": 1,
+   "currentPts": 15,
+   "projectedPts": 74.8,
+   "projectedRank": 2,
+   "delta": -1
+  },
+  {
+   "team": "Arsenal",
+   "currentRank": 2,
+   "currentPts": 12,
+   "projectedPts": 69.6,
+   "projectedRank": 3,
+   "delta": -1
+  },
+  {
+   "team": "Brentford",
+   "currentRank": 4,
+   "currentPts": 9,
+   "projectedPts": 67.7,
+   "projectedRank": 4,
+   "delta": 0
+  },
+  {
+   "team": "Hull",
+   "currentRank": 8,
+   "currentPts": 8,
+   "projectedPts": 62.7,
+   "projectedRank": 5,
+   "delta": 3
+  },
+  {
+   "team": "Everton",
+   "currentRank": 7,
+   "currentPts": 9,
+   "projectedPts": 59.4,
+   "projectedRank": 6,
+   "delta": 1
+  },
+  {
+   "team": "Liverpool",
+   "currentRank": 6,
+   "currentPts": 9,
+   "projectedPts": 56.5,
+   "projectedRank": 7,
+   "delta": -1
+  },
+  {
+   "team": "Leeds",
+   "currentRank": 5,
+   "currentPts": 9,
+   "projectedPts": 56.4,
+   "projectedRank": 8,
+   "delta": -3
+  },
+  {
+   "team": "Man United",
+   "currentRank": 12,
+   "currentPts": 5,
+   "projectedPts": 51.3,
+   "projectedRank": 9,
+   "delta": 3
+  },
+  {
+   "team": "Nott'M Forest",
+   "currentRank": 13,
+   "currentPts": 5,
+   "projectedPts": 48.6,
+   "projectedRank": 10,
+   "delta": 3
+  },
+  {
+   "team": "Newcastle United",
+   "currentRank": 9,
+   "currentPts": 8,
+   "projectedPts": 47.5,
+   "projectedRank": 11,
+   "delta": -2
+  },
+  {
+   "team": "Chelsea",
+   "currentRank": 10,
+   "currentPts": 7,
+   "projectedPts": 43.3,
+   "projectedRank": 12,
+   "delta": -2
+  },
+  {
+   "team": "Bournemouth",
+   "currentRank": 17,
+   "currentPts": 3,
+   "projectedPts": 42.3,
+   "projectedRank": 13,
+   "delta": 4
+  },
+  {
+   "team": "Fulham",
+   "currentRank": 19,
+   "currentPts": 2,
+   "projectedPts": 40.8,
+   "projectedRank": 14,
+   "delta": 5
+  },
+  {
+   "team": "Coventry",
+   "currentRank": 18,
+   "currentPts": 3,
+   "projectedPts": 40.2,
+   "projectedRank": 15,
+   "delta": 3
+  },
+  {
+   "team": "Sunderland",
+   "currentRank": 14,
+   "currentPts": 4,
+   "projectedPts": 39.5,
+   "projectedRank": 16,
+   "delta": -2
+  },
+  {
+   "team": "Ipswich",
+   "currentRank": 11,
+   "currentPts": 6,
+   "projectedPts": 36.8,
+   "projectedRank": 17,
+   "delta": -6
+  },
+  {
+   "team": "Aston Villa",
+   "currentRank": 16,
+   "currentPts": 4,
+   "projectedPts": 34.8,
+   "projectedRank": 18,
+   "delta": -2
+  },
+  {
+   "team": "Crystal Palace",
+   "currentRank": 15,
+   "currentPts": 4,
+   "projectedPts": 34.0,
+   "projectedRank": 19,
+   "delta": -4
+  },
+  {
+   "team": "Tottenham",
+   "currentRank": 20,
+   "currentPts": 2,
+   "projectedPts": 33.2,
+   "projectedRank": 20,
+   "delta": 0
+  }
+ ]
+}
