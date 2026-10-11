@@ -85,17 +85,38 @@ function windowStats(matches: XgMatchRow[], n: number): XgWindowStats | null {
 }
 
 /**
+ * Stats xG/buts L5 & L10 par noms d'équipes, dans le contexte Domicile
+ * (recevant) / Extérieur (visiteur). Utilisé par le rapport v2 : le payload
+ * serveur ne détient pas l'objet `BSDFootballMatch`, seulement les noms.
+ * Retourne null si la ligue n'est pas couverte par Understat ou si une des
+ * deux équipes est introuvable.
+ */
+export function matchXgByNames(
+  leagueSlug: string | undefined,
+  homeName: string,
+  awayName: string,
+): MatchXgStats | null {
+  return xgByTeamKeys(leagueSlug, formKey(homeName), formKey(awayName));
+}
+
+/**
  * Stats xG/buts L5 & L10 du match, dans le contexte Domicile (recevant) /
  * Extérieur (visiteur). Retourne null si la ligue n'est pas couverte par
  * Understat ou si une des deux équipes est introuvable.
  */
 export function matchXg(leagueSlug: string | undefined, match: BSDFootballMatch): MatchXgStats | null {
+  return xgByTeamKeys(
+    leagueSlug,
+    formKey(match.home_team_obj?.name ?? match.home_team),
+    formKey(match.away_team_obj?.name ?? match.away_team),
+  );
+}
+
+/** Cœur partagé de `matchXg` / `matchXgByNames` — résolution par clés normalisées. */
+function xgByTeamKeys(leagueSlug: string | undefined, homeKey: string, awayKey: string): MatchXgStats | null {
   if (!leagueSlug) return null;
   const file = readXg(leagueSlug);
   if (!file?.teams) return null;
-
-  const homeKey = formKey(match.home_team_obj?.name ?? match.home_team);
-  const awayKey = formKey(match.away_team_obj?.name ?? match.away_team);
 
   const findTeam = (key: string): XgMatchRow[] | null => {
     if (!key) return null;

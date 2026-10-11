@@ -161,11 +161,13 @@ export function settleFootballPick(
   return { status: "void" as const, odds: null, closingOdds: null };
 }
 
-function pickDesc(key: StrategyTop5Key, e: StrategyMatchEntry): string {
+/** Libellé lisible du pick pour le journal et l'onglet Résultats (13 stratégies). */
+export function pickDesc(key: StrategyTop5Key, e: StrategyMatchEntry): string {
   const sideTeam = e.pick === "home" ? e.home.teamName : e.away.teamName;
   switch (key) {
     case "bestTeam":
     case "bestTeam1x2":
+    case "gagnant":
       return sideTeam ?? "?";
     case "doubleChance1X":
       return `DC 1X ${e.home.teamName ?? "?"}`;
@@ -175,6 +177,8 @@ function pickDesc(key: StrategyTop5Key, e: StrategyMatchEntry): string {
       return "DC 12 (pas de nul)";
     case "bestDefense":
       return `${sideTeam ?? "?"} ≤1 enc`;
+    case "dnb":
+      return `DNB ${sideTeam ?? "?"}`;
     case "bestAttack":
       return "Over 2,5 buts";
     case "over15":
@@ -190,7 +194,7 @@ function pickDesc(key: StrategyTop5Key, e: StrategyMatchEntry): string {
 }
 
 /** Transforme un top 5 calculé en entrées de store, settlées via resultMap. */
-function buildEntries(
+export function buildEntries(
   top5: ReturnType<typeof computeStrategyTop5Matches>,
   resultMap: Map<string, BSDFootballMatch>,
 ): Top5BacktestEntry[] {
