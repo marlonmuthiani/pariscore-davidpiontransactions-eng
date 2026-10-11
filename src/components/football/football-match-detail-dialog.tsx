@@ -40,6 +40,7 @@ import { TeamProfileDialog } from "@/components/football/team-profile-dialog";
 import { BSD_LEAGUE_IDS } from "@/lib/league-mapping";
 import { footballPowerScore } from "@/lib/power-score";
 import { FootballRadarChart } from "@/components/football/football-radar-chart";
+import { MatchTimingStatsView } from "@/components/football/match-timing-stats-view";
 import { OddsHistoryChart } from "@/components/football/odds-history-chart";
 import { useOddsHistory } from "@/hooks/use-odds-history";
 
@@ -594,6 +595,13 @@ export function FootballMatchDetailDialog({ match, open, onOpenChange }: Props) 
                 )}
               </div>
             </section>
+
+            {/* Timing des buts (style OddAlerts) : 1er but moy., fenêtres 0-15'/35-45'/70+', premier à marquer */}
+            <MatchTimingStatsView
+              matchId={view.id.replace(/^bsd-/, "")}
+              homeName={view.home.shortName}
+              awayName={view.away.shortName}
+            />
 
             {/* 3 paris prédictifs */}
             {betsResult && betsResult.bets.length > 0 && (

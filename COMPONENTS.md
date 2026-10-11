@@ -191,6 +191,7 @@ connu en cas de coupure, expose `{ bundle, status, message, updatedAt }`.
 | shot-quality-panel | shot-quality-panel.tsx | Qualité des tirs : répartition buts/sauvés/ratés, conversion, cadrement, xG moyen par tir, écart xG–réel (moteur `football-shot-quality.ts`) |
 | lineup-pitch | lineup-pitch.tsx | Terrain tactique interactif (compos probables/officiels, schéma, notes, absences) |
 | match-conditions-widget | match-conditions-widget.tsx | Widget conditions match (arbitre, sévérité cartons, stade, météo) |
+| match-timing-stats-view | match-timing-stats-view.tsx | Timing des buts style OddAlerts : 1er but moy. (match/marqué/encaissé), % fenêtres 0-15'/35-45'/70+', proba premier à marquer (moteur `stats/goal-timing-service.ts`) |
 | MatchPredictiveCard | MatchPredictiveCard.tsx | Carte analyse prédictive ML (badge tendance, résumé, 3 paris, zéro lien externe) |
 | momentum-chart | momentum-chart.tsx | Graphique momentum football (ticker d'événements agrégés inclus) |
 | pressure-timeline | pressure-timeline.tsx | Timeline de pression minute par minute (barres divergentes home/away, marqueurs but/corner/tir, diff-bar %, fenêtre Plein/10'/5') |

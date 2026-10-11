@@ -983,6 +983,9 @@ export interface BSDFootballMatchMeta {
   id: number;
   homeTeam: string;
   awayTeam: string;
+  /** Ids numériques BSD des deux équipes (team_obj) — null si absents. */
+  homeTeamId: number | null;
+  awayTeamId: number | null;
   leagueId: number | null;
   leagueName: string;
   date: string;
@@ -1005,6 +1008,8 @@ export async function fetchBSDFootballMatchMeta(matchId: string): Promise<BSDFoo
       id: m.id,
       homeTeam: m.home_team ?? "",
       awayTeam: m.away_team ?? "",
+      homeTeamId: typeof m.home_team_obj?.id === "number" ? m.home_team_obj.id : null,
+      awayTeamId: typeof m.away_team_obj?.id === "number" ? m.away_team_obj.id : null,
       leagueId: typeof m.league?.id === "number" ? m.league.id : null,
       leagueName: m.league?.name ?? "",
       date: m.event_date ?? new Date().toISOString(),
@@ -1016,6 +1021,67 @@ export async function fetchBSDFootballMatchMeta(matchId: string): Promise<BSDFoo
     };
   } catch {
     return null;
+  }
+}
+
+/** Match allégé d'une équipe — historique récent (endpoint /v2/teams/{id}/matches/). */
+export interface BSDTeamMatchLite {
+  id: number;
+  /** Date de coup d'envoi ISO (BSD `started_at`). */
+  eventDate: string;
+  status: string;
+  homeTeamId: number | null;
+  awayTeamId: number | null;
+  homeTeamName: string | null;
+  awayTeamName: string | null;
+  homeScore: number | null;
+  awayScore: number | null;
+}
+
+/**
+ * Matchs récents d'une équipe BSD (tous statuts, plus récents d'abord).
+ * Endpoint prouvé en legacy (server.js `bsdGetTeamDetail`) — la réponse est
+ * wrappée différemment selon les versions : `{data: {results}}` ou `{results}`.
+ * Jamais de throw : réseau/402/429 → tableau vide (le caller dégrade proprement).
+ */
+export async function fetchBSDTeamRecentMatches(teamId: number, pageSize = 20): Promise<BSDTeamMatchLite[]> {
+  if (!Number.isInteger(teamId) || teamId <= 0) return [];
+  try {
+    const raw = await bsdFetchRaw<unknown>(`/v2/teams/${teamId}/matches/?page_size=${pageSize}`);
+    const container = raw as { data?: { results?: unknown } | unknown[]; results?: unknown };
+    const list = Array.isArray(container?.data)
+      ? (container.data as unknown[])
+      : ((container?.data as { results?: unknown[] } | undefined)?.results ?? container?.results ?? []);
+    if (!Array.isArray(list)) return [];
+    return list
+      .map((m): BSDTeamMatchLite | null => {
+        const o = m as {
+          id?: unknown; started_at?: unknown; event_date?: unknown; status?: unknown;
+          home_team?: { id?: unknown; name?: unknown }; away_team?: { id?: unknown; name?: unknown };
+          home_score?: unknown; away_score?: unknown;
+        };
+        const id = Number(o?.id);
+        if (!Number.isInteger(id) || id <= 0) return null;
+        const num = (v: unknown): number | null => {
+          const n = typeof v === "number" ? v : Number(v);
+          return Number.isFinite(n) ? n : null;
+        };
+        const str = (v: unknown): string | null => (typeof v === "string" ? v : null);
+        return {
+          id,
+          eventDate: String(o?.started_at ?? o?.event_date ?? ""),
+          status: String(o?.status ?? ""),
+          homeTeamId: num(o?.home_team?.id),
+          awayTeamId: num(o?.away_team?.id),
+          homeTeamName: str(o?.home_team?.name),
+          awayTeamName: str(o?.away_team?.name),
+          homeScore: num(o?.home_score),
+          awayScore: num(o?.away_score),
+        };
+      })
+      .filter((m): m is BSDTeamMatchLite => m !== null);
+  } catch {
+    return [];
   }
 }
 
