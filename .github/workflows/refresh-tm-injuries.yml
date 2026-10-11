@@ -1,0 +1,82 @@
+name: Refresh TM Injuries
+
+# Hebdo : dates de retour blessures Transfermarkt (5 ligues, Playwright headless)
+# -> public/data/injuries_tm/*.json, mergées dans football-injuries.ts.
+# Complète RotoWire (dates paywall) : ~96 retours/246 lignes au 2026-09-18.
+#
+# Triggers:
+#   - schedule: lundi 05:15 UTC (après refresh-injuries 05:00)
+#   - workflow_dispatch: manuel (+ --league pour une seule ligue)
+
+on:
+  schedule:
+    - cron: "15 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      league:
+        description: "Slug ligue (vide = toutes)"
+        type: string
+        required: false
+        default: ""
+
+concurrency:
+  group: refresh-tm-injuries
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    name: Scrape Transfermarkt injuries
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies (frozen lockfile)
+        run: bun install --frozen-lockfile
+
+      - name: Install Playwright Chromium
+        run: bunx playwright install --with-deps chromium
+
+      - name: Scrape injuries
+        run: |
+          mkdir -p public/data/injuries_tm
+          ARGS="--output-dir public/data/injuries_tm"
+          if [ -n "${{ inputs.league }}" ]; then
+            ARGS="$ARGS --league ${{ inputs.league }}"
+          else
+            ARGS="$ARGS --all"
+          fi
+          node scripts/scrape_tm_injuries.mjs $ARGS
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet -- public/data/injuries_tm/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes — skipping commit"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat -- public/data/injuries_tm/
+          fi
+
+      - name: Commit & push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/injuries_tm/
+          git commit -m "chore(data): refresh tm injuries [skip ci]"
+          git push
