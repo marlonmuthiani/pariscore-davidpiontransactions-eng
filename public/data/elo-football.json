@@ -5,131 +5,134 @@
   "kFactor": 22.0,
   "homeAdvantage": 55.0,
   "seasonCarryover": 0.7,
-  "updatedAt": "2026-09-18T10:53:07.479897+00:00"
+  "updatedAt": "2026-10-12T13:24:31.733593+00:00",
+  "fetchedAt": "2026-10-12T13:24:31.733593+00:00",
+  "rowCount": 296,
+  "coveragePct": 100
  },
  "leagues": {
   "epl": {
    "season": "2026/27",
    "teams": [
     {
-     "team": "Arsenal",
-     "elo": 1660,
-     "rank": 1,
-     "matches": 118
-    },
-    {
      "team": "Man City",
-     "elo": 1643,
-     "rank": 2,
-     "matches": 118
+     "elo": 1648,
+     "rank": 1,
+     "matches": 119
     },
     {
-     "team": "Man United",
-     "elo": 1559,
-     "rank": 3,
-     "matches": 118
+     "team": "Arsenal",
+     "elo": 1647,
+     "rank": 2,
+     "matches": 119
     },
     {
      "team": "Liverpool",
-     "elo": 1551,
+     "elo": 1564,
+     "rank": 3,
+     "matches": 119
+    },
+    {
+     "team": "Man United",
+     "elo": 1558,
      "rank": 4,
-     "matches": 118
-    },
-    {
-     "team": "Bournemouth",
-     "elo": 1542,
-     "rank": 5,
-     "matches": 118
-    },
-    {
-     "team": "Leeds",
-     "elo": 1533,
-     "rank": 6,
-     "matches": 42
+     "matches": 119
     },
     {
      "team": "Brighton",
-     "elo": 1531,
-     "rank": 7,
-     "matches": 118
+     "elo": 1544,
+     "rank": 5,
+     "matches": 119
     },
     {
      "team": "Brentford",
-     "elo": 1528,
-     "rank": 8,
-     "matches": 118
-    },
-    {
-     "team": "Chelsea",
-     "elo": 1526,
-     "rank": 9,
-     "matches": 118
-    },
-    {
-     "team": "Hull",
-     "elo": 1524,
-     "rank": 10,
-     "matches": 4
+     "elo": 1538,
+     "rank": 6,
+     "matches": 119
     },
     {
      "team": "Aston Villa",
-     "elo": 1521,
-     "rank": 11,
-     "matches": 118
+     "elo": 1531,
+     "rank": 7,
+     "matches": 119
+    },
+    {
+     "team": "Leeds",
+     "elo": 1530,
+     "rank": 8,
+     "matches": 43
+    },
+    {
+     "team": "Bournemouth",
+     "elo": 1529,
+     "rank": 9,
+     "matches": 119
     },
     {
      "team": "Everton",
-     "elo": 1509,
-     "rank": 12,
-     "matches": 118
+     "elo": 1517,
+     "rank": 10,
+     "matches": 119
     },
     {
-     "team": "Sunderland",
-     "elo": 1507,
-     "rank": 13,
-     "matches": 42
+     "team": "Chelsea",
+     "elo": 1517,
+     "rank": 11,
+     "matches": 119
     },
     {
      "team": "Newcastle",
-     "elo": 1505,
+     "elo": 1515,
+     "rank": 12,
+     "matches": 119
+    },
+    {
+     "team": "Hull",
+     "elo": 1514,
+     "rank": 13,
+     "matches": 5
+    },
+    {
+     "team": "Sunderland",
+     "elo": 1502,
      "rank": 14,
-     "matches": 118
+     "matches": 43
     },
     {
      "team": "Nott'm Forest",
-     "elo": 1505,
+     "elo": 1491,
      "rank": 15,
-     "matches": 118
+     "matches": 119
+    },
+    {
+     "team": "Coventry",
+     "elo": 1479,
+     "rank": 16,
+     "matches": 5
     },
     {
      "team": "Fulham",
      "elo": 1477,
-     "rank": 16,
-     "matches": 118
+     "rank": 17,
+     "matches": 119
     },
     {
      "team": "Crystal Palace",
-     "elo": 1472,
-     "rank": 17,
-     "matches": 118
-    },
-    {
-     "team": "Coventry",
-     "elo": 1465,
+     "elo": 1475,
      "rank": 18,
-     "matches": 4
-    },
-    {
-     "team": "Tottenham",
-     "elo": 1446,
-     "rank": 19,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Ipswich",
-     "elo": 1445,
+     "elo": 1438,
+     "rank": 19,
+     "matches": 43
+    },
+    {
+     "team": "Tottenham",
+     "elo": 1436,
      "rank": 20,
-     "matches": 42
+     "matches": 119
     }
    ]
   },
@@ -138,147 +141,147 @@
    "teams": [
     {
      "team": "Southampton",
-     "elo": 1595,
+     "elo": 1583,
      "rank": 1,
-     "matches": 99
+     "matches": 100
     },
     {
      "team": "Middlesbrough",
      "elo": 1561,
      "rank": 2,
-     "matches": 145
-    },
-    {
-     "team": "Millwall",
-     "elo": 1555,
-     "rank": 3,
-     "matches": 145
+     "matches": 146
     },
     {
      "team": "Swansea",
-     "elo": 1540,
-     "rank": 4,
-     "matches": 145
+     "elo": 1552,
+     "rank": 3,
+     "matches": 146
     },
     {
-     "team": "Burnley",
-     "elo": 1533,
-     "rank": 5,
-     "matches": 53
+     "team": "Millwall",
+     "elo": 1552,
+     "rank": 4,
+     "matches": 146
     },
     {
      "team": "West Ham",
-     "elo": 1532,
+     "elo": 1535,
+     "rank": 5,
+     "matches": 8
+    },
+    {
+     "team": "Wolves",
+     "elo": 1530,
      "rank": 6,
      "matches": 7
     },
     {
-     "team": "Wolves",
-     "elo": 1521,
+     "team": "Burnley",
+     "elo": 1529,
      "rank": 7,
-     "matches": 6
+     "matches": 54
     },
     {
      "team": "Wrexham",
-     "elo": 1517,
+     "elo": 1529,
      "rank": 8,
-     "matches": 53
-    },
-    {
-     "team": "Lincoln",
-     "elo": 1515,
-     "rank": 9,
-     "matches": 7
+     "matches": 54
     },
     {
      "team": "Birmingham",
-     "elo": 1515,
-     "rank": 10,
-     "matches": 99
-    },
-    {
-     "team": "West Brom",
-     "elo": 1513,
-     "rank": 11,
-     "matches": 145
-    },
-    {
-     "team": "Norwich",
-     "elo": 1512,
-     "rank": 12,
-     "matches": 145
+     "elo": 1514,
+     "rank": 9,
+     "matches": 100
     },
     {
      "team": "Bristol City",
-     "elo": 1499,
-     "rank": 13,
-     "matches": 145
+     "elo": 1507,
+     "rank": 10,
+     "matches": 146
     },
     {
-     "team": "Sheffield United",
-     "elo": 1496,
-     "rank": 14,
-     "matches": 99
+     "team": "West Brom",
+     "elo": 1504,
+     "rank": 11,
+     "matches": 146
+    },
+    {
+     "team": "Lincoln",
+     "elo": 1503,
+     "rank": 12,
+     "matches": 8
+    },
+    {
+     "team": "Norwich",
+     "elo": 1499,
+     "rank": 13,
+     "matches": 146
     },
     {
      "team": "QPR",
-     "elo": 1494,
-     "rank": 15,
-     "matches": 145
-    },
-    {
-     "team": "Charlton",
-     "elo": 1484,
-     "rank": 16,
-     "matches": 53
+     "elo": 1490,
+     "rank": 14,
+     "matches": 146
     },
     {
      "team": "Bolton",
-     "elo": 1476,
-     "rank": 17,
-     "matches": 7
+     "elo": 1490,
+     "rank": 15,
+     "matches": 8
+    },
+    {
+     "team": "Sheffield United",
+     "elo": 1486,
+     "rank": 16,
+     "matches": 100
     },
     {
      "team": "Portsmouth",
-     "elo": 1476,
-     "rank": 18,
-     "matches": 98
-    },
-    {
-     "team": "Blackburn",
-     "elo": 1469,
-     "rank": 19,
-     "matches": 145
-    },
-    {
-     "team": "Derby",
-     "elo": 1463,
-     "rank": 20,
+     "elo": 1474,
+     "rank": 17,
      "matches": 99
+    },
+    {
+     "team": "Charlton",
+     "elo": 1473,
+     "rank": 18,
+     "matches": 54
     },
     {
      "team": "Stoke",
-     "elo": 1462,
-     "rank": 21,
-     "matches": 145
+     "elo": 1473,
+     "rank": 19,
+     "matches": 146
     },
     {
-     "team": "Watford",
-     "elo": 1455,
-     "rank": 22,
-     "matches": 145
+     "team": "Blackburn",
+     "elo": 1471,
+     "rank": 20,
+     "matches": 146
+    },
+    {
+     "team": "Derby",
+     "elo": 1467,
+     "rank": 21,
+     "matches": 100
     },
     {
      "team": "Cardiff",
-     "elo": 1437,
+     "elo": 1448,
+     "rank": 22,
+     "matches": 100
+    },
+    {
+     "team": "Watford",
+     "elo": 1447,
      "rank": 23,
-     "matches": 99
+     "matches": 146
     },
     {
      "team": "Preston",
-     "elo": 1426,
+     "elo": 1430,
      "rank": 24,
-     "matches": 145
+     "matches": 146
     }
    ]
   },
@@ -287,111 +290,111 @@
    "teams": [
     {
      "team": "Paris SG",
-     "elo": 1618,
+     "elo": 1628,
      "rank": 1,
-     "matches": 106
-    },
-    {
-     "team": "Lille",
-     "elo": 1594,
-     "rank": 2,
-     "matches": 106
+     "matches": 107
     },
     {
      "team": "Monaco",
-     "elo": 1578,
-     "rank": 3,
-     "matches": 106
+     "elo": 1586,
+     "rank": 2,
+     "matches": 107
     },
     {
-     "team": "Rennes",
-     "elo": 1570,
-     "rank": 4,
-     "matches": 106
+     "team": "Lille",
+     "elo": 1580,
+     "rank": 3,
+     "matches": 107
     },
     {
      "team": "Lyon",
-     "elo": 1564,
+     "elo": 1573,
+     "rank": 4,
+     "matches": 107
+    },
+    {
+     "team": "Rennes",
+     "elo": 1560,
      "rank": 5,
-     "matches": 106
-    },
-    {
-     "team": "Lens",
-     "elo": 1554,
-     "rank": 6,
-     "matches": 106
-    },
-    {
-     "team": "Strasbourg",
-     "elo": 1550,
-     "rank": 7,
-     "matches": 106
+     "matches": 107
     },
     {
      "team": "Paris FC",
-     "elo": 1537,
+     "elo": 1547,
+     "rank": 6,
+     "matches": 39
+    },
+    {
+     "team": "Lens",
+     "elo": 1545,
+     "rank": 7,
+     "matches": 107
+    },
+    {
+     "team": "Strasbourg",
+     "elo": 1540,
      "rank": 8,
-     "matches": 38
+     "matches": 107
     },
     {
      "team": "Marseille",
-     "elo": 1524,
+     "elo": 1514,
      "rank": 9,
-     "matches": 106
-    },
-    {
-     "team": "Lorient",
-     "elo": 1498,
-     "rank": 10,
-     "matches": 72
-    },
-    {
-     "team": "Troyes",
-     "elo": 1493,
-     "rank": 11,
-     "matches": 4
+     "matches": 107
     },
     {
      "team": "Le Mans",
-     "elo": 1491,
-     "rank": 12,
-     "matches": 4
-    },
-    {
-     "team": "Brest",
-     "elo": 1486,
-     "rank": 13,
-     "matches": 106
+     "elo": 1501,
+     "rank": 10,
+     "matches": 5
     },
     {
      "team": "Toulouse",
-     "elo": 1484,
+     "elo": 1492,
+     "rank": 11,
+     "matches": 107
+    },
+    {
+     "team": "Lorient",
+     "elo": 1488,
+     "rank": 12,
+     "matches": 73
+    },
+    {
+     "team": "Troyes",
+     "elo": 1482,
+     "rank": 13,
+     "matches": 5
+    },
+    {
+     "team": "Brest",
+     "elo": 1476,
      "rank": 14,
-     "matches": 106
+     "matches": 107
     },
     {
      "team": "Auxerre",
-     "elo": 1465,
+     "elo": 1475,
      "rank": 15,
-     "matches": 72
+     "matches": 73
     },
     {
      "team": "Nice",
-     "elo": 1454,
+     "elo": 1467,
      "rank": 16,
-     "matches": 106
+     "matches": 107
     },
     {
      "team": "Angers",
-     "elo": 1453,
+     "elo": 1463,
      "rank": 17,
-     "matches": 72
+     "matches": 73
     },
     {
      "team": "Le Havre",
-     "elo": 1448,
+     "elo": 1440,
      "rank": 18,
-     "matches": 106
+     "matches": 107
     }
    ]
   },
@@ -400,111 +403,111 @@
    "teams": [
     {
      "team": "St Etienne",
-     "elo": 1569,
+     "elo": 1570,
      "rank": 1,
-     "matches": 78
+     "matches": 79
     },
     {
      "team": "Reims",
-     "elo": 1563,
+     "elo": 1560,
      "rank": 2,
-     "matches": 40
-    },
-    {
-     "team": "Metz",
-     "elo": 1547,
-     "rank": 3,
-     "matches": 40
+     "matches": 41
     },
     {
      "team": "Red Star",
-     "elo": 1540,
+     "elo": 1550,
+     "rank": 3,
+     "matches": 74
+    },
+    {
+     "team": "Metz",
+     "elo": 1546,
      "rank": 4,
-     "matches": 73
-    },
-    {
-     "team": "Rodez",
-     "elo": 1536,
-     "rank": 5,
-     "matches": 112
-    },
-    {
-     "team": "Annecy",
-     "elo": 1533,
-     "rank": 6,
-     "matches": 112
+     "matches": 41
     },
     {
      "team": "Montpellier",
-     "elo": 1532,
+     "elo": 1535,
+     "rank": 5,
+     "matches": 41
+    },
+    {
+     "team": "Rodez",
+     "elo": 1521,
+     "rank": 6,
+     "matches": 113
+    },
+    {
+     "team": "Annecy",
+     "elo": 1519,
      "rank": 7,
-     "matches": 40
+     "matches": 113
     },
     {
      "team": "Sochaux",
      "elo": 1510,
      "rank": 8,
-     "matches": 6
-    },
-    {
-     "team": "Grenoble",
-     "elo": 1489,
-     "rank": 9,
-     "matches": 112
+     "matches": 7
     },
     {
      "team": "Dijon",
-     "elo": 1488,
+     "elo": 1502,
+     "rank": 9,
+     "matches": 7
+    },
+    {
+     "team": "Grenoble",
+     "elo": 1486,
      "rank": 10,
-     "matches": 6
-    },
-    {
-     "team": "Dunkerque",
-     "elo": 1483,
-     "rank": 11,
-     "matches": 112
-    },
-    {
-     "team": "Guingamp",
-     "elo": 1476,
-     "rank": 12,
-     "matches": 112
+     "matches": 113
     },
     {
      "team": "Nantes",
-     "elo": 1470,
-     "rank": 13,
-     "matches": 6
+     "elo": 1483,
+     "rank": 11,
+     "matches": 7
     },
     {
      "team": "Nancy",
-     "elo": 1466,
-     "rank": 14,
-     "matches": 40
+     "elo": 1480,
+     "rank": 12,
+     "matches": 41
     },
     {
      "team": "Pau FC",
-     "elo": 1464,
-     "rank": 15,
-     "matches": 112
+     "elo": 1474,
+     "rank": 13,
+     "matches": 113
     },
     {
-     "team": "Boulogne",
-     "elo": 1461,
-     "rank": 16,
-     "matches": 40
+     "team": "Dunkerque",
+     "elo": 1474,
+     "rank": 14,
+     "matches": 113
+    },
+    {
+     "team": "Guingamp",
+     "elo": 1466,
+     "rank": 15,
+     "matches": 113
     },
     {
      "team": "Clermont",
-     "elo": 1453,
+     "elo": 1456,
+     "rank": 16,
+     "matches": 75
+    },
+    {
+     "team": "Boulogne",
+     "elo": 1448,
      "rank": 17,
-     "matches": 74
+     "matches": 41
     },
     {
      "team": "Laval",
-     "elo": 1445,
+     "elo": 1446,
      "rank": 18,
-     "matches": 112
+     "matches": 113
     }
    ]
   },
@@ -513,111 +516,111 @@
    "teams": [
     {
      "team": "Bayern Munich",
-     "elo": 1679,
+     "elo": 1683,
      "rank": 1,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Dortmund",
-     "elo": 1620,
+     "elo": 1630,
      "rank": 2,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Leverkusen",
-     "elo": 1566,
+     "elo": 1575,
      "rank": 3,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "RB Leipzig",
-     "elo": 1563,
+     "elo": 1554,
      "rank": 4,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Stuttgart",
-     "elo": 1552,
+     "elo": 1541,
      "rank": 5,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Freiburg",
-     "elo": 1539,
+     "elo": 1540,
      "rank": 6,
-     "matches": 105
-    },
-    {
-     "team": "Hoffenheim",
-     "elo": 1522,
-     "rank": 7,
-     "matches": 105
-    },
-    {
-     "team": "Augsburg",
-     "elo": 1519,
-     "rank": 8,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Elversberg",
-     "elo": 1515,
-     "rank": 9,
-     "matches": 3
-    },
-    {
-     "team": "Schalke 04",
-     "elo": 1506,
-     "rank": 10,
-     "matches": 3
-    },
-    {
-     "team": "Ein Frankfurt",
-     "elo": 1504,
-     "rank": 11,
-     "matches": 105
+     "elo": 1516,
+     "rank": 7,
+     "matches": 4
     },
     {
      "team": "Mainz",
-     "elo": 1502,
+     "elo": 1513,
+     "rank": 8,
+     "matches": 106
+    },
+    {
+     "team": "Hoffenheim",
+     "elo": 1512,
+     "rank": 9,
+     "matches": 106
+    },
+    {
+     "team": "Augsburg",
+     "elo": 1508,
+     "rank": 10,
+     "matches": 106
+    },
+    {
+     "team": "Schalke 04",
+     "elo": 1505,
+     "rank": 11,
+     "matches": 4
+    },
+    {
+     "team": "Ein Frankfurt",
+     "elo": 1503,
      "rank": 12,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Paderborn",
-     "elo": 1484,
+     "elo": 1494,
      "rank": 13,
-     "matches": 3
+     "matches": 4
     },
     {
      "team": "Werder Bremen",
-     "elo": 1462,
+     "elo": 1473,
      "rank": 14,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Hamburg",
-     "elo": 1460,
+     "elo": 1469,
      "rank": 15,
-     "matches": 37
-    },
-    {
-     "team": "M'gladbach",
-     "elo": 1456,
-     "rank": 16,
-     "matches": 105
+     "matches": 38
     },
     {
      "team": "Union Berlin",
-     "elo": 1451,
+     "elo": 1448,
+     "rank": 16,
+     "matches": 106
+    },
+    {
+     "team": "M'gladbach",
+     "elo": 1445,
      "rank": 17,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "FC Koln",
-     "elo": 1449,
+     "elo": 1441,
      "rank": 18,
-     "matches": 71
+     "matches": 72
     }
    ]
   },
@@ -626,111 +629,111 @@
    "teams": [
     {
      "team": "Hertha",
-     "elo": 1558,
+     "elo": 1568,
      "rank": 1,
-     "matches": 107
+     "matches": 108
     },
     {
      "team": "Nurnberg",
-     "elo": 1547,
+     "elo": 1557,
      "rank": 2,
-     "matches": 107
+     "matches": 108
     },
     {
      "team": "Hannover",
-     "elo": 1529,
+     "elo": 1537,
      "rank": 3,
-     "matches": 107
+     "matches": 108
     },
     {
      "team": "Heidenheim",
-     "elo": 1529,
+     "elo": 1528,
      "rank": 4,
-     "matches": 5
+     "matches": 6
     },
     {
      "team": "St Pauli",
-     "elo": 1527,
+     "elo": 1528,
      "rank": 5,
-     "matches": 39
+     "matches": 40
     },
     {
      "team": "Kaiserslautern",
-     "elo": 1519,
+     "elo": 1526,
      "rank": 6,
-     "matches": 107
+     "matches": 108
     },
     {
      "team": "Wolfsburg",
-     "elo": 1513,
+     "elo": 1521,
      "rank": 7,
-     "matches": 5
+     "matches": 6
     },
     {
      "team": "Cottbus",
-     "elo": 1502,
+     "elo": 1501,
      "rank": 8,
-     "matches": 5
-    },
-    {
-     "team": "Bochum",
-     "elo": 1499,
-     "rank": 9,
-     "matches": 39
+     "matches": 6
     },
     {
      "team": "Magdeburg",
      "elo": 1495,
+     "rank": 9,
+     "matches": 108
+    },
+    {
+     "team": "Bochum",
+     "elo": 1490,
      "rank": 10,
-     "matches": 107
-    },
-    {
-     "team": "Karlsruhe",
-     "elo": 1483,
-     "rank": 11,
-     "matches": 107
-    },
-    {
-     "team": "Darmstadt",
-     "elo": 1482,
-     "rank": 12,
-     "matches": 73
+     "matches": 40
     },
     {
      "team": "Holstein Kiel",
-     "elo": 1479,
-     "rank": 13,
-     "matches": 73
+     "elo": 1477,
+     "rank": 11,
+     "matches": 74
     },
     {
-     "team": "Dresden",
-     "elo": 1474,
-     "rank": 14,
-     "matches": 39
+     "team": "Darmstadt",
+     "elo": 1473,
+     "rank": 12,
+     "matches": 74
+    },
+    {
+     "team": "Karlsruhe",
+     "elo": 1472,
+     "rank": 13,
+     "matches": 108
     },
     {
      "team": "Osnabruck",
-     "elo": 1467,
-     "rank": 15,
-     "matches": 39
+     "elo": 1469,
+     "rank": 14,
+     "matches": 40
     },
     {
      "team": "Greuther Furth",
-     "elo": 1467,
-     "rank": 16,
-     "matches": 107
+     "elo": 1466,
+     "rank": 15,
+     "matches": 108
     },
     {
      "team": "Bielefeld",
-     "elo": 1465,
+     "elo": 1466,
+     "rank": 16,
+     "matches": 40
+    },
+    {
+     "team": "Dresden",
+     "elo": 1464,
      "rank": 17,
-     "matches": 39
+     "matches": 40
     },
     {
      "team": "Braunschweig",
-     "elo": 1447,
+     "elo": 1440,
      "rank": 18,
-     "matches": 107
+     "matches": 108
     }
    ]
   },
@@ -739,123 +742,123 @@
    "teams": [
     {
      "team": "Barcelona",
-     "elo": 1692,
+     "elo": 1699,
      "rank": 1,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Real Madrid",
-     "elo": 1650,
+     "elo": 1638,
      "rank": 2,
-     "matches": 120
-    },
-    {
-     "team": "Betis",
-     "elo": 1589,
-     "rank": 3,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Ath Madrid",
-     "elo": 1584,
+     "elo": 1595,
+     "rank": 3,
+     "matches": 121
+    },
+    {
+     "team": "Betis",
+     "elo": 1588,
      "rank": 4,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Villarreal",
-     "elo": 1546,
+     "elo": 1553,
      "rank": 5,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Vallecano",
      "elo": 1515,
      "rank": 6,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "La Coruna",
-     "elo": 1510,
+     "elo": 1511,
      "rank": 7,
-     "matches": 6
-    },
-    {
-     "team": "Sevilla",
-     "elo": 1507,
-     "rank": 8,
-     "matches": 120
-    },
-    {
-     "team": "Ath Bilbao",
-     "elo": 1497,
-     "rank": 9,
-     "matches": 119
-    },
-    {
-     "team": "Santander",
-     "elo": 1496,
-     "rank": 10,
-     "matches": 6
+     "matches": 7
     },
     {
      "team": "Celta",
+     "elo": 1504,
+     "rank": 8,
+     "matches": 121
+    },
+    {
+     "team": "Sevilla",
+     "elo": 1500,
+     "rank": 9,
+     "matches": 121
+    },
+    {
+     "team": "Sociedad",
+     "elo": 1499,
+     "rank": 10,
+     "matches": 121
+    },
+    {
+     "team": "Ath Bilbao",
      "elo": 1495,
      "rank": 11,
      "matches": 120
     },
     {
      "team": "Alaves",
-     "elo": 1493,
+     "elo": 1495,
      "rank": 12,
-     "matches": 120
-    },
-    {
-     "team": "Valencia",
-     "elo": 1490,
-     "rank": 13,
-     "matches": 120
-    },
-    {
-     "team": "Levante",
-     "elo": 1490,
-     "rank": 14,
-     "matches": 43
-    },
-    {
-     "team": "Sociedad",
-     "elo": 1486,
-     "rank": 15,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Getafe",
-     "elo": 1478,
+     "elo": 1487,
+     "rank": 13,
+     "matches": 121
+    },
+    {
+     "team": "Santander",
+     "elo": 1487,
+     "rank": 14,
+     "matches": 7
+    },
+    {
+     "team": "Levante",
+     "elo": 1482,
+     "rank": 15,
+     "matches": 44
+    },
+    {
+     "team": "Valencia",
+     "elo": 1477,
      "rank": 16,
-     "matches": 120
-    },
-    {
-     "team": "Malaga",
-     "elo": 1475,
-     "rank": 17,
-     "matches": 6
-    },
-    {
-     "team": "Espanol",
-     "elo": 1469,
-     "rank": 18,
-     "matches": 82
-    },
-    {
-     "team": "Osasuna",
-     "elo": 1466,
-     "rank": 19,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Elche",
-     "elo": 1455,
+     "elo": 1468,
+     "rank": 17,
+     "matches": 45
+    },
+    {
+     "team": "Malaga",
+     "elo": 1466,
+     "rank": 18,
+     "matches": 7
+    },
+    {
+     "team": "Osasuna",
+     "elo": 1465,
+     "rank": 19,
+     "matches": 121
+    },
+    {
+     "team": "Espanol",
+     "elo": 1456,
      "rank": 20,
-     "matches": 44
+     "matches": 83
     }
    ]
   },
@@ -864,135 +867,135 @@
    "teams": [
     {
      "team": "Castellon",
-     "elo": 1586,
+     "elo": 1597,
      "rank": 1,
-     "matches": 89
-    },
-    {
-     "team": "Las Palmas",
-     "elo": 1567,
-     "rank": 2,
-     "matches": 47
+     "matches": 92
     },
     {
      "team": "Eibar",
-     "elo": 1565,
-     "rank": 3,
-     "matches": 131
-    },
-    {
-     "team": "Burgos",
-     "elo": 1557,
-     "rank": 4,
-     "matches": 131
+     "elo": 1592,
+     "rank": 2,
+     "matches": 134
     },
     {
      "team": "Almeria",
-     "elo": 1551,
+     "elo": 1580,
+     "rank": 3,
+     "matches": 92
+    },
+    {
+     "team": "Burgos",
+     "elo": 1566,
+     "rank": 4,
+     "matches": 134
+    },
+    {
+     "team": "Las Palmas",
+     "elo": 1542,
      "rank": 5,
-     "matches": 89
+     "matches": 50
     },
     {
      "team": "Oviedo",
-     "elo": 1548,
+     "elo": 1534,
      "rank": 6,
-     "matches": 89
-    },
-    {
-     "team": "Mallorca",
-     "elo": 1517,
-     "rank": 7,
-     "matches": 5
+     "matches": 92
     },
     {
      "team": "Sabadell",
-     "elo": 1515,
-     "rank": 8,
-     "matches": 5
+     "elo": 1522,
+     "rank": 7,
+     "matches": 8
     },
     {
      "team": "Girona",
-     "elo": 1503,
-     "rank": 9,
-     "matches": 5
+     "elo": 1519,
+     "rank": 8,
+     "matches": 8
     },
     {
-     "team": "Celta B",
-     "elo": 1499,
-     "rank": 10,
-     "matches": 5
+     "team": "Mallorca",
+     "elo": 1519,
+     "rank": 9,
+     "matches": 8
     },
     {
      "team": "Sp Gijon",
-     "elo": 1499,
-     "rank": 11,
-     "matches": 131
-    },
-    {
-     "team": "Granada",
-     "elo": 1492,
-     "rank": 12,
-     "matches": 89
-    },
-    {
-     "team": "Tenerife",
-     "elo": 1489,
-     "rank": 13,
-     "matches": 89
-    },
-    {
-     "team": "Leganes",
-     "elo": 1489,
-     "rank": 14,
-     "matches": 89
-    },
-    {
-     "team": "Sociedad B",
-     "elo": 1488,
-     "rank": 15,
-     "matches": 47
-    },
-    {
-     "team": "Albacete",
-     "elo": 1481,
-     "rank": 16,
-     "matches": 131
+     "elo": 1511,
+     "rank": 10,
+     "matches": 134
     },
     {
      "team": "Cordoba",
-     "elo": 1477,
-     "rank": 17,
-     "matches": 89
+     "elo": 1489,
+     "rank": 11,
+     "matches": 92
     },
     {
      "team": "Ceuta",
-     "elo": 1469,
-     "rank": 18,
-     "matches": 47
+     "elo": 1482,
+     "rank": 12,
+     "matches": 50
     },
     {
-     "team": "Eldense",
-     "elo": 1468,
-     "rank": 19,
-     "matches": 89
+     "team": "Celta B",
+     "elo": 1482,
+     "rank": 13,
+     "matches": 8
+    },
+    {
+     "team": "Granada",
+     "elo": 1481,
+     "rank": 14,
+     "matches": 92
+    },
+    {
+     "team": "Leganes",
+     "elo": 1477,
+     "rank": 15,
+     "matches": 92
     },
     {
      "team": "Andorra",
-     "elo": 1465,
-     "rank": 20,
-     "matches": 89
+     "elo": 1470,
+     "rank": 16,
+     "matches": 92
+    },
+    {
+     "team": "Tenerife",
+     "elo": 1470,
+     "rank": 17,
+     "matches": 92
     },
     {
      "team": "Valladolid",
-     "elo": 1450,
+     "elo": 1467,
+     "rank": 18,
+     "matches": 92
+    },
+    {
+     "team": "Eldense",
+     "elo": 1464,
+     "rank": 19,
+     "matches": 92
+    },
+    {
+     "team": "Sociedad B",
+     "elo": 1454,
+     "rank": 20,
+     "matches": 50
+    },
+    {
+     "team": "Albacete",
+     "elo": 1451,
      "rank": 21,
-     "matches": 89
+     "matches": 134
     },
     {
      "team": "Cadiz",
-     "elo": 1424,
+     "elo": 1429,
      "rank": 22,
-     "matches": 89
+     "matches": 92
     }
    ]
   },
@@ -1003,121 +1006,121 @@
      "team": "Inter",
      "elo": 1666,
      "rank": 1,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Roma",
      "elo": 1619,
      "rank": 2,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Como",
-     "elo": 1602,
+     "elo": 1589,
      "rank": 3,
-     "matches": 80
-    },
-    {
-     "team": "Napoli",
-     "elo": 1588,
-     "rank": 4,
-     "matches": 118
+     "matches": 81
     },
     {
      "team": "Juventus",
-     "elo": 1580,
+     "elo": 1588,
+     "rank": 4,
+     "matches": 119
+    },
+    {
+     "team": "Napoli",
+     "elo": 1586,
      "rank": 5,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Milan",
-     "elo": 1578,
+     "elo": 1584,
      "rank": 6,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Lazio",
-     "elo": 1561,
+     "elo": 1570,
      "rank": 7,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Atalanta",
-     "elo": 1544,
+     "elo": 1536,
      "rank": 8,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Cagliari",
-     "elo": 1504,
+     "elo": 1516,
      "rank": 9,
-     "matches": 118
-    },
-    {
-     "team": "Sassuolo",
-     "elo": 1499,
-     "rank": 10,
-     "matches": 80
-    },
-    {
-     "team": "Bologna",
-     "elo": 1498,
-     "rank": 11,
-     "matches": 118
-    },
-    {
-     "team": "Fiorentina",
-     "elo": 1489,
-     "rank": 12,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Frosinone",
+     "elo": 1500,
+     "rank": 10,
+     "matches": 43
+    },
+    {
+     "team": "Bologna",
+     "elo": 1496,
+     "rank": 11,
+     "matches": 119
+    },
+    {
+     "team": "Fiorentina",
+     "elo": 1490,
+     "rank": 12,
+     "matches": 119
+    },
+    {
+     "team": "Sassuolo",
      "elo": 1487,
      "rank": 13,
-     "matches": 42
+     "matches": 81
     },
     {
      "team": "Udinese",
-     "elo": 1487,
+     "elo": 1475,
      "rank": 14,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Torino",
-     "elo": 1468,
+     "elo": 1471,
      "rank": 15,
-     "matches": 118
-    },
-    {
-     "team": "Lecce",
-     "elo": 1462,
-     "rank": 16,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Parma",
-     "elo": 1462,
+     "elo": 1471,
+     "rank": 16,
+     "matches": 81
+    },
+    {
+     "team": "Lecce",
+     "elo": 1456,
      "rank": 17,
-     "matches": 80
+     "matches": 119
     },
     {
      "team": "Genoa",
-     "elo": 1451,
+     "elo": 1442,
      "rank": 18,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Venezia",
-     "elo": 1423,
+     "elo": 1415,
      "rank": 19,
-     "matches": 42
+     "matches": 43
     },
     {
      "team": "Monza",
-     "elo": 1399,
+     "elo": 1411,
      "rank": 20,
-     "matches": 80
+     "matches": 81
     }
    ]
   },
@@ -1126,123 +1129,123 @@
    "teams": [
     {
      "team": "Palermo",
-     "elo": 1589,
+     "elo": 1595,
      "rank": 1,
-     "matches": 118
+     "matches": 119
     },
     {
      "team": "Pisa",
-     "elo": 1531,
+     "elo": 1533,
      "rank": 2,
-     "matches": 80
+     "matches": 81
     },
     {
      "team": "Mantova",
-     "elo": 1519,
-     "rank": 3,
-     "matches": 80
-    },
-    {
-     "team": "Cremonese",
      "elo": 1517,
-     "rank": 4,
-     "matches": 80
+     "rank": 3,
+     "matches": 81
     },
     {
      "team": "Modena",
-     "elo": 1508,
+     "elo": 1516,
+     "rank": 4,
+     "matches": 119
+    },
+    {
+     "team": "Cremonese",
+     "elo": 1513,
      "rank": 5,
-     "matches": 118
-    },
-    {
-     "team": "Catanzaro",
-     "elo": 1506,
-     "rank": 6,
-     "matches": 118
-    },
-    {
-     "team": "Avellino",
-     "elo": 1506,
-     "rank": 7,
-     "matches": 42
-    },
-    {
-     "team": "Arezzo",
-     "elo": 1505,
-     "rank": 8,
-     "matches": 4
-    },
-    {
-     "team": "Juve Stabia",
-     "elo": 1500,
-     "rank": 9,
-     "matches": 80
+     "matches": 81
     },
     {
      "team": "Ascoli",
-     "elo": 1499,
-     "rank": 10,
-     "matches": 42
-    },
-    {
-     "team": "Vicenza",
-     "elo": 1498,
-     "rank": 11,
-     "matches": 4
-    },
-    {
-     "team": "Padova",
-     "elo": 1495,
-     "rank": 12,
-     "matches": 42
-    },
-    {
-     "team": "Verona",
-     "elo": 1489,
-     "rank": 13,
-     "matches": 4
+     "elo": 1508,
+     "rank": 6,
+     "matches": 43
     },
     {
      "team": "Sudtirol",
-     "elo": 1487,
-     "rank": 14,
-     "matches": 118
+     "elo": 1501,
+     "rank": 7,
+     "matches": 119
+    },
+    {
+     "team": "Verona",
+     "elo": 1498,
+     "rank": 8,
+     "matches": 5
+    },
+    {
+     "team": "Juve Stabia",
+     "elo": 1498,
+     "rank": 9,
+     "matches": 81
     },
     {
      "team": "Benevento",
-     "elo": 1486,
+     "elo": 1498,
+     "rank": 10,
+     "matches": 5
+    },
+    {
+     "team": "Avellino",
+     "elo": 1496,
+     "rank": 11,
+     "matches": 43
+    },
+    {
+     "team": "Catanzaro",
+     "elo": 1495,
+     "rank": 12,
+     "matches": 119
+    },
+    {
+     "team": "Arezzo",
+     "elo": 1491,
+     "rank": 13,
+     "matches": 5
+    },
+    {
+     "team": "Vicenza",
+     "elo": 1489,
+     "rank": 14,
+     "matches": 5
+    },
+    {
+     "team": "Padova",
+     "elo": 1489,
      "rank": 15,
-     "matches": 4
+     "matches": 43
     },
     {
      "team": "Cesena",
-     "elo": 1478,
+     "elo": 1480,
      "rank": 16,
-     "matches": 80
-    },
-    {
-     "team": "Empoli",
-     "elo": 1473,
-     "rank": 17,
-     "matches": 42
+     "matches": 81
     },
     {
      "team": "Virtus Entella",
-     "elo": 1470,
-     "rank": 18,
-     "matches": 42
+     "elo": 1473,
+     "rank": 17,
+     "matches": 43
     },
     {
      "team": "Sampdoria",
-     "elo": 1457,
+     "elo": 1468,
+     "rank": 18,
+     "matches": 119
+    },
+    {
+     "team": "Empoli",
+     "elo": 1464,
      "rank": 19,
-     "matches": 118
+     "matches": 43
     },
     {
      "team": "Carrarese",
-     "elo": 1443,
+     "elo": 1431,
      "rank": 20,
-     "matches": 80
+     "matches": 81
     }
    ]
   },
@@ -1251,111 +1254,111 @@
    "teams": [
     {
      "team": "PSV Eindhoven",
-     "elo": 1683,
+     "elo": 1670,
      "rank": 1,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Feyenoord",
-     "elo": 1615,
+     "elo": 1622,
      "rank": 2,
-     "matches": 108
-    },
-    {
-     "team": "Ajax",
-     "elo": 1589,
-     "rank": 3,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Twente",
-     "elo": 1586,
-     "rank": 4,
-     "matches": 108
+     "elo": 1598,
+     "rank": 3,
+     "matches": 109
     },
     {
      "team": "AZ Alkmaar",
-     "elo": 1580,
+     "elo": 1586,
+     "rank": 4,
+     "matches": 109
+    },
+    {
+     "team": "Ajax",
+     "elo": 1584,
      "rank": 5,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Nijmegen",
-     "elo": 1531,
+     "elo": 1528,
      "rank": 6,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Utrecht",
-     "elo": 1529,
+     "elo": 1523,
      "rank": 7,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Heerenveen",
-     "elo": 1507,
+     "elo": 1519,
      "rank": 8,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Groningen",
-     "elo": 1506,
+     "elo": 1514,
      "rank": 9,
-     "matches": 74
+     "matches": 75
     },
     {
      "team": "Go Ahead Eagles",
-     "elo": 1504,
+     "elo": 1507,
      "rank": 10,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "For Sittard",
-     "elo": 1491,
+     "elo": 1502,
      "rank": 11,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Excelsior",
-     "elo": 1490,
+     "elo": 1495,
      "rank": 12,
-     "matches": 74
-    },
-    {
-     "team": "Telstar",
-     "elo": 1476,
-     "rank": 13,
-     "matches": 40
+     "matches": 75
     },
     {
      "team": "Cambuur",
-     "elo": 1472,
+     "elo": 1474,
+     "rank": 13,
+     "matches": 7
+    },
+    {
+     "team": "Telstar",
+     "elo": 1470,
      "rank": 14,
-     "matches": 6
+     "matches": 41
     },
     {
      "team": "Sparta Rotterdam",
-     "elo": 1469,
+     "elo": 1457,
      "rank": 15,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Den Haag",
-     "elo": 1458,
+     "elo": 1457,
      "rank": 16,
-     "matches": 6
+     "matches": 7
     },
     {
      "team": "Zwolle",
-     "elo": 1453,
+     "elo": 1445,
      "rank": 17,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Willem II",
-     "elo": 1419,
+     "elo": 1409,
      "rank": 18,
-     "matches": 40
+     "matches": 41
     }
    ]
   },
@@ -1364,111 +1367,111 @@
    "teams": [
     {
      "team": "Porto",
-     "elo": 1686,
+     "elo": 1695,
      "rank": 1,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Benfica",
-     "elo": 1682,
+     "elo": 1673,
      "rank": 2,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Sp Lisbon",
-     "elo": 1670,
+     "elo": 1663,
      "rank": 3,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Sp Braga",
-     "elo": 1579,
+     "elo": 1580,
      "rank": 4,
-     "matches": 107
+     "matches": 108
+    },
+    {
+     "team": "Famalicao",
+     "elo": 1534,
+     "rank": 5,
+     "matches": 109
     },
     {
      "team": "Santa Clara",
      "elo": 1531,
-     "rank": 5,
-     "matches": 74
-    },
-    {
-     "team": "Famalicao",
-     "elo": 1524,
      "rank": 6,
-     "matches": 108
+     "matches": 75
     },
     {
      "team": "Academico Viseu",
-     "elo": 1510,
+     "elo": 1521,
      "rank": 7,
-     "matches": 6
+     "matches": 7
     },
     {
      "team": "Arouca",
-     "elo": 1507,
+     "elo": 1513,
      "rank": 8,
-     "matches": 108
-    },
-    {
-     "team": "Gil Vicente",
-     "elo": 1495,
-     "rank": 9,
-     "matches": 107
+     "matches": 109
     },
     {
      "team": "Maritimo",
-     "elo": 1491,
+     "elo": 1493,
+     "rank": 9,
+     "matches": 7
+    },
+    {
+     "team": "Gil Vicente",
+     "elo": 1493,
      "rank": 10,
-     "matches": 6
+     "matches": 108
     },
     {
      "team": "Moreirense",
-     "elo": 1482,
+     "elo": 1483,
      "rank": 11,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Alverca",
-     "elo": 1475,
+     "elo": 1483,
      "rank": 12,
-     "matches": 40
-    },
-    {
-     "team": "Estrela",
-     "elo": 1473,
-     "rank": 13,
-     "matches": 108
+     "matches": 41
     },
     {
      "team": "Guimaraes",
-     "elo": 1464,
+     "elo": 1462,
+     "rank": 13,
+     "matches": 109
+    },
+    {
+     "team": "Estrela",
+     "elo": 1461,
      "rank": 14,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Rio Ave",
-     "elo": 1452,
+     "elo": 1443,
      "rank": 15,
-     "matches": 108
+     "matches": 109
     },
     {
      "team": "Estoril",
-     "elo": 1448,
+     "elo": 1435,
      "rank": 16,
-     "matches": 108
-    },
-    {
-     "team": "Nacional",
-     "elo": 1428,
-     "rank": 17,
-     "matches": 74
+     "matches": 109
     },
     {
      "team": "Casa Pia",
-     "elo": 1419,
+     "elo": 1432,
+     "rank": 17,
+     "matches": 109
+    },
+    {
+     "team": "Nacional",
+     "elo": 1418,
      "rank": 18,
-     "matches": 108
+     "matches": 75
     }
    ]
   },
@@ -1477,111 +1480,111 @@
    "teams": [
     {
      "team": "St. Gilloise",
-     "elo": 1667,
+     "elo": 1674,
      "rank": 1,
-     "matches": 126
+     "matches": 127
     },
     {
      "team": "Club Brugge",
-     "elo": 1655,
+     "elo": 1662,
      "rank": 2,
-     "matches": 126
+     "matches": 127
     },
     {
      "team": "Gent",
-     "elo": 1553,
+     "elo": 1561,
      "rank": 3,
-     "matches": 127
-    },
-    {
-     "team": "Genk",
-     "elo": 1548,
-     "rank": 4,
-     "matches": 127
+     "matches": 128
     },
     {
      "team": "Charleroi",
+     "elo": 1549,
+     "rank": 4,
+     "matches": 123
+    },
+    {
+     "team": "Genk",
      "elo": 1542,
      "rank": 5,
-     "matches": 122
-    },
-    {
-     "team": "St Truiden",
-     "elo": 1540,
-     "rank": 6,
-     "matches": 122
-    },
-    {
-     "team": "Waregem",
-     "elo": 1524,
-     "rank": 7,
-     "matches": 42
-    },
-    {
-     "team": "Standard",
-     "elo": 1523,
-     "rank": 8,
-     "matches": 125
+     "matches": 128
     },
     {
      "team": "Anderlecht",
-     "elo": 1523,
-     "rank": 9,
+     "elo": 1533,
+     "rank": 6,
+     "matches": 127
+    },
+    {
+     "team": "St Truiden",
+     "elo": 1526,
+     "rank": 7,
+     "matches": 123
+    },
+    {
+     "team": "Standard",
+     "elo": 1515,
+     "rank": 8,
      "matches": 126
     },
     {
-     "team": "Beveren",
-     "elo": 1503,
-     "rank": 10,
-     "matches": 6
-    },
-    {
-     "team": "Lommel SK",
-     "elo": 1498,
-     "rank": 11,
-     "matches": 6
+     "team": "Waregem",
+     "elo": 1514,
+     "rank": 9,
+     "matches": 43
     },
     {
      "team": "Westerlo",
-     "elo": 1492,
+     "elo": 1506,
+     "rank": 10,
+     "matches": 126
+    },
+    {
+     "team": "Lommel SK",
+     "elo": 1495,
+     "rank": 11,
+     "matches": 7
+    },
+    {
+     "team": "Beveren",
+     "elo": 1491,
      "rank": 12,
-     "matches": 125
+     "matches": 7
     },
     {
      "team": "Antwerp",
-     "elo": 1481,
+     "elo": 1474,
      "rank": 13,
-     "matches": 126
-    },
-    {
-     "team": "Cercle Brugge",
-     "elo": 1454,
-     "rank": 14,
-     "matches": 118
+     "matches": 127
     },
     {
      "team": "Mechelen",
-     "elo": 1452,
+     "elo": 1456,
+     "rank": 14,
+     "matches": 127
+    },
+    {
+     "team": "Cercle Brugge",
+     "elo": 1447,
      "rank": 15,
-     "matches": 126
-    },
-    {
-     "team": "RAAL La Louviere",
-     "elo": 1436,
-     "rank": 16,
-     "matches": 41
-    },
-    {
-     "team": "Oud-Heverlee Leuven",
-     "elo": 1414,
-     "rank": 17,
-     "matches": 126
+     "matches": 119
     },
     {
      "team": "Kortrijk",
-     "elo": 1414,
+     "elo": 1426,
+     "rank": 16,
+     "matches": 79
+    },
+    {
+     "team": "RAAL La Louviere",
+     "elo": 1426,
+     "rank": 17,
+     "matches": 42
+    },
+    {
+     "team": "Oud-Heverlee Leuven",
+     "elo": 1424,
      "rank": 18,
-     "matches": 78
+     "matches": 127
     }
    ]
   },
@@ -1590,111 +1593,111 @@
    "teams": [
     {
      "team": "Galatasaray",
-     "elo": 1665,
+     "elo": 1653,
      "rank": 1,
-     "matches": 113
+     "matches": 114
     },
     {
      "team": "Fenerbahce",
-     "elo": 1619,
+     "elo": 1624,
      "rank": 2,
-     "matches": 113
-    },
-    {
-     "team": "Besiktas",
-     "elo": 1586,
-     "rank": 3,
-     "matches": 113
+     "matches": 114
     },
     {
      "team": "Trabzonspor",
-     "elo": 1573,
+     "elo": 1585,
+     "rank": 3,
+     "matches": 114
+    },
+    {
+     "team": "Besiktas",
+     "elo": 1575,
      "rank": 4,
-     "matches": 113
+     "matches": 114
     },
     {
      "team": "Buyuksehyr",
-     "elo": 1536,
+     "elo": 1543,
      "rank": 5,
-     "matches": 113
+     "matches": 114
     },
     {
      "team": "Amedspor",
-     "elo": 1523,
+     "elo": 1534,
      "rank": 6,
-     "matches": 5
-    },
-    {
-     "team": "Samsunspor",
-     "elo": 1516,
-     "rank": 7,
-     "matches": 113
-    },
-    {
-     "team": "Kasimpasa",
-     "elo": 1513,
-     "rank": 8,
-     "matches": 113
-    },
-    {
-     "team": "Rizespor",
-     "elo": 1509,
-     "rank": 9,
-     "matches": 113
-    },
-    {
-     "team": "Corum",
-     "elo": 1507,
-     "rank": 10,
-     "matches": 5
-    },
-    {
-     "team": "Goztep",
-     "elo": 1506,
-     "rank": 11,
-     "matches": 75
+     "matches": 6
     },
     {
      "team": "Alanyaspor",
-     "elo": 1498,
-     "rank": 12,
-     "matches": 113
+     "elo": 1511,
+     "rank": 7,
+     "matches": 114
+    },
+    {
+     "team": "Rizespor",
+     "elo": 1511,
+     "rank": 8,
+     "matches": 114
+    },
+    {
+     "team": "Kasimpasa",
+     "elo": 1510,
+     "rank": 9,
+     "matches": 114
+    },
+    {
+     "team": "Samsunspor",
+     "elo": 1506,
+     "rank": 10,
+     "matches": 114
+    },
+    {
+     "team": "Goztep",
+     "elo": 1504,
+     "rank": 11,
+     "matches": 76
     },
     {
      "team": "Kocaelispor",
-     "elo": 1494,
-     "rank": 13,
-     "matches": 39
+     "elo": 1503,
+     "rank": 12,
+     "matches": 40
     },
     {
      "team": "Erzurumspor",
-     "elo": 1487,
-     "rank": 14,
-     "matches": 5
+     "elo": 1497,
+     "rank": 13,
+     "matches": 6
     },
     {
-     "team": "Gaziantep",
-     "elo": 1479,
-     "rank": 15,
-     "matches": 113
+     "team": "Corum",
+     "elo": 1494,
+     "rank": 14,
+     "matches": 6
     },
     {
      "team": "Genclerbirligi",
-     "elo": 1479,
+     "elo": 1471,
+     "rank": 15,
+     "matches": 40
+    },
+    {
+     "team": "Gaziantep",
+     "elo": 1470,
      "rank": 16,
-     "matches": 39
+     "matches": 114
     },
     {
      "team": "Konyaspor",
-     "elo": 1465,
+     "elo": 1468,
      "rank": 17,
-     "matches": 113
+     "matches": 114
     },
     {
      "team": "Eyupspor",
-     "elo": 1446,
+     "elo": 1441,
      "rank": 18,
-     "matches": 75
+     "matches": 76
     }
    ]
   },
@@ -1703,87 +1706,87 @@
    "teams": [
     {
      "team": "AEK",
-     "elo": 1632,
+     "elo": 1638,
      "rank": 1,
-     "matches": 104
-    },
-    {
-     "team": "PAOK",
-     "elo": 1615,
-     "rank": 2,
-     "matches": 104
+     "matches": 105
     },
     {
      "team": "Olympiakos",
-     "elo": 1615,
+     "elo": 1624,
+     "rank": 2,
+     "matches": 105
+    },
+    {
+     "team": "PAOK",
+     "elo": 1624,
      "rank": 3,
-     "matches": 104
+     "matches": 105
     },
     {
      "team": "Panathinaikos",
-     "elo": 1601,
+     "elo": 1611,
      "rank": 4,
-     "matches": 104
+     "matches": 105
     },
     {
      "team": "Aris",
-     "elo": 1543,
+     "elo": 1540,
      "rank": 5,
-     "matches": 104
-    },
-    {
-     "team": "OFI Crete",
-     "elo": 1505,
-     "rank": 6,
-     "matches": 101
+     "matches": 105
     },
     {
      "team": "Iraklis",
-     "elo": 1503,
+     "elo": 1506,
+     "rank": 6,
+     "matches": 5
+    },
+    {
+     "team": "OFI Crete",
+     "elo": 1501,
      "rank": 7,
-     "matches": 4
+     "matches": 102
     },
     {
      "team": "Levadeiakos",
-     "elo": 1493,
+     "elo": 1484,
      "rank": 8,
-     "matches": 71
+     "matches": 72
     },
     {
      "team": "Kalamata",
-     "elo": 1488,
+     "elo": 1479,
      "rank": 9,
-     "matches": 4
-    },
-    {
-     "team": "Atromitos",
-     "elo": 1476,
-     "rank": 10,
-     "matches": 105
-    },
-    {
-     "team": "Panetolikos",
-     "elo": 1475,
-     "rank": 11,
-     "matches": 108
+     "matches": 5
     },
     {
      "team": "Kifisia",
-     "elo": 1457,
+     "elo": 1470,
+     "rank": 10,
+     "matches": 74
+    },
+    {
+     "team": "Panetolikos",
+     "elo": 1467,
+     "rank": 11,
+     "matches": 109
+    },
+    {
+     "team": "Atromitos",
+     "elo": 1463,
      "rank": 12,
-     "matches": 73
+     "matches": 106
     },
     {
      "team": "Asteras Tripolis",
-     "elo": 1442,
+     "elo": 1446,
      "rank": 13,
-     "matches": 105
+     "matches": 106
     },
     {
      "team": "Volos NFC",
-     "elo": 1425,
+     "elo": 1419,
      "rank": 14,
-     "matches": 104
+     "matches": 105
     }
    ]
   },
@@ -1792,75 +1795,75 @@
    "teams": [
     {
      "team": "Celtic",
-     "elo": 1668,
+     "elo": 1653,
      "rank": 1,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Rangers",
-     "elo": 1607,
+     "elo": 1621,
      "rank": 2,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Hearts",
-     "elo": 1594,
+     "elo": 1591,
      "rank": 3,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Motherwell",
-     "elo": 1528,
+     "elo": 1517,
      "rank": 4,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Hibernian",
-     "elo": 1511,
+     "elo": 1508,
      "rank": 5,
-     "matches": 120
-    },
-    {
-     "team": "Falkirk",
-     "elo": 1480,
-     "rank": 6,
-     "matches": 44
+     "matches": 121
     },
     {
      "team": "Dundee United",
-     "elo": 1469,
+     "elo": 1482,
+     "rank": 6,
+     "matches": 83
+    },
+    {
+     "team": "Falkirk",
+     "elo": 1481,
      "rank": 7,
-     "matches": 82
+     "matches": 45
     },
     {
      "team": "Dundee",
-     "elo": 1467,
+     "elo": 1478,
      "rank": 8,
-     "matches": 120
-    },
-    {
-     "team": "St Mirren",
-     "elo": 1465,
-     "rank": 9,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "Aberdeen",
-     "elo": 1458,
-     "rank": 10,
-     "matches": 120
+     "elo": 1461,
+     "rank": 9,
+     "matches": 121
     },
     {
      "team": "Kilmarnock",
-     "elo": 1450,
+     "elo": 1453,
+     "rank": 10,
+     "matches": 121
+    },
+    {
+     "team": "St Mirren",
+     "elo": 1453,
      "rank": 11,
-     "matches": 120
+     "matches": 121
     },
     {
      "team": "St Johnstone",
-     "elo": 1448,
+     "elo": 1447,
      "rank": 12,
-     "matches": 82
+     "matches": 83
     }
    ]
   }
