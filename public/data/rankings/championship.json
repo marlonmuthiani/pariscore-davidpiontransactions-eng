@@ -4,7 +4,7 @@
     "leagueId": "championship",
     "leagueName": "England2",
     "season": "2026-27",
-    "lastUpdated": "2026-10-11T10:43:43.072085Z",
+    "lastUpdated": "2026-10-12T11:49:21.330230Z",
     "source": "soccerstats.com",
     "teamCount": 24,
     "partial": false
@@ -16,7 +16,7 @@
         "teamId": "",
         "teamName": "Southampton",
         "value": 3.0,
-        "played": 4
+        "played": 5
       },
       {
         "rank": 2,
@@ -184,16 +184,16 @@
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Middlesbrough",
-        "value": 13.0,
+        "teamName": "Southampton",
+        "value": 15.0,
         "played": 5
       },
       {
         "rank": 2,
         "teamId": "",
-        "teamName": "Southampton",
-        "value": 12.0,
-        "played": 4
+        "teamName": "Middlesbrough",
+        "value": 13.0,
+        "played": 5
       },
       {
         "rank": 3,
@@ -355,11 +355,11 @@
         "rank": 1,
         "teamId": "",
         "teamName": "Southampton",
-        "value": 15.0,
-        "played": 4
+        "value": 16.0,
+        "played": 5
       },
       {
-        "rank": 1,
+        "rank": 2,
         "teamId": "",
         "teamName": "West Ham Utd",
         "value": 15.0,
@@ -554,7 +554,7 @@
         "teamId": "",
         "teamName": "Southampton",
         "value": 4.0,
-        "played": 4
+        "played": 5
       },
       {
         "rank": 5,
@@ -695,8 +695,8 @@
         "rank": 1,
         "teamId": "",
         "teamName": "Southampton",
-        "value": 11.0,
-        "played": 4
+        "value": 12.0,
+        "played": 5
       },
       {
         "rank": 2,
@@ -864,16 +864,16 @@
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Middlesbrough",
-        "value": 4.0,
+        "teamName": "Southampton",
+        "value": 5.0,
         "played": 5
       },
       {
-        "rank": 1,
+        "rank": 2,
         "teamId": "",
-        "teamName": "Southampton",
+        "teamName": "Middlesbrough",
         "value": 4.0,
-        "played": 4
+        "played": 5
       },
       {
         "rank": 3,
@@ -1155,7 +1155,7 @@
         "teamId": "",
         "teamName": "Southampton",
         "value": 0.0,
-        "played": 4
+        "played": 5
       },
       {
         "rank": 18,
@@ -1204,16 +1204,16 @@
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Middlesbrough",
+        "teamName": "Southampton",
         "value": 0.0,
         "played": 5
       },
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Southampton",
+        "teamName": "Middlesbrough",
         "value": 0.0,
-        "played": 4
+        "played": 5
       },
       {
         "rank": 1,
@@ -1446,47 +1446,47 @@
       {
         "rank": 11,
         "teamId": "",
-        "teamName": "Portsmouth",
-        "value": 1.33,
-        "played": 3
-      },
-      {
-        "rank": 12,
-        "teamId": "",
         "teamName": "Middlesbrough",
         "value": 1.25,
         "played": 4
       },
       {
-        "rank": 12,
+        "rank": 11,
         "teamId": "",
         "teamName": "Sheffield United",
         "value": 1.25,
         "played": 4
       },
       {
-        "rank": 14,
+        "rank": 13,
         "teamId": "",
         "teamName": "Wrexham",
         "value": 1.2,
         "played": 5
       },
       {
-        "rank": 15,
+        "rank": 14,
+        "teamId": "",
+        "teamName": "Portsmouth",
+        "value": 1.0,
+        "played": 4
+      },
+      {
+        "rank": 14,
         "teamId": "",
         "teamName": "Derby County",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 14,
         "teamId": "",
         "teamName": "Bolton",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 14,
         "teamId": "",
         "teamName": "Charlton",
         "value": 1.0,
@@ -1639,7 +1639,7 @@
         "teamId": "",
         "teamName": "Portsmouth",
         "value": 4.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 14,
@@ -1837,7 +1837,7 @@
         "teamId": "",
         "teamName": "Portsmouth",
         "value": 4.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 16,
@@ -1886,23 +1886,23 @@
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Portsmouth",
-        "value": 3.0,
-        "played": 3
-      },
-      {
-        "rank": 2,
-        "teamId": "",
         "teamName": "Birmingham City",
         "value": 4.0,
         "played": 5
       },
       {
-        "rank": 2,
+        "rank": 1,
         "teamId": "",
         "teamName": "Qp Rangers",
         "value": 4.0,
         "played": 5
+      },
+      {
+        "rank": 1,
+        "teamId": "",
+        "teamName": "Portsmouth",
+        "value": 4.0,
+        "played": 4
       },
       {
         "rank": 4,
@@ -2082,37 +2082,37 @@
         "played": 4
       },
       {
-        "rank": 4,
-        "teamId": "",
-        "teamName": "Portsmouth",
-        "value": 1.0,
-        "played": 3
-      },
-      {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Bristol City",
         "value": 0.0,
         "played": 5
       },
       {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Wolves",
         "value": 0.0,
         "played": 5
       },
       {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Middlesbrough",
         "value": 0.0,
         "played": 4
       },
       {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Sheffield United",
+        "value": 0.0,
+        "played": 4
+      },
+      {
+        "rank": 5,
+        "teamId": "",
+        "teamName": "Portsmouth",
         "value": 0.0,
         "played": 4
       },
@@ -2319,7 +2319,7 @@
         "teamId": "",
         "teamName": "Portsmouth",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 10,
@@ -2482,7 +2482,7 @@
         "teamId": "",
         "teamName": "Portsmouth",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 9,
@@ -2622,75 +2622,75 @@
       {
         "rank": 3,
         "teamId": "",
-        "teamName": "Portsmouth",
-        "value": 1.0,
-        "played": 3
-      },
-      {
-        "rank": 3,
-        "teamId": "",
         "teamName": "Blackburn",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Lincoln City",
         "value": 2.0,
         "played": 5
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Wolves",
         "value": 2.0,
         "played": 5
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Millwall",
         "value": 2.0,
         "played": 5
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Stoke",
         "value": 2.0,
         "played": 5
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "West Bromwich Albion",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 10,
+        "teamId": "",
+        "teamName": "Portsmouth",
+        "value": 2.0,
+        "played": 4
+      },
+      {
+        "rank": 10,
         "teamId": "",
         "teamName": "Derby County",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Bolton",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Charlton",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 10,
         "teamId": "",
         "teamName": "Southampton",
         "value": 2.0,

@@ -4,7 +4,7 @@
     "leagueId": "primeira_liga",
     "leagueName": "Portugal",
     "season": "2026-27",
-    "lastUpdated": "2026-10-11T10:44:09.064718Z",
+    "lastUpdated": "2026-10-12T11:49:44.965938Z",
     "source": "soccerstats.com",
     "teamCount": 18,
     "partial": false
@@ -26,28 +26,28 @@
         "played": 4
       },
       {
-        "rank": 3,
+        "rank": 2,
         "teamId": "",
         "teamName": "Benfica",
-        "value": 2.33,
-        "played": 3
-      },
-      {
-        "rank": 4,
-        "teamId": "",
-        "teamName": "Santa Clara",
-        "value": 2.0,
+        "value": 2.5,
         "played": 4
       },
       {
         "rank": 4,
         "teamId": "",
         "teamName": "Arouca",
-        "value": 2.0,
-        "played": 3
+        "value": 2.25,
+        "played": 4
       },
       {
-        "rank": 4,
+        "rank": 5,
+        "teamId": "",
+        "teamName": "Santa Clara",
+        "value": 2.0,
+        "played": 4
+      },
+      {
+        "rank": 5,
         "teamId": "",
         "teamName": "Sporting Braga",
         "value": 2.0,
@@ -103,32 +103,32 @@
         "played": 4
       },
       {
-        "rank": 14,
+        "rank": 12,
+        "teamId": "",
+        "teamName": "Rio Ave",
+        "value": 1.0,
+        "played": 4
+      },
+      {
+        "rank": 15,
         "teamId": "",
         "teamName": "Nacional",
         "value": 0.75,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 16,
         "teamId": "",
         "teamName": "Famalicao",
         "value": 0.67,
         "played": 3
       },
       {
-        "rank": 16,
+        "rank": 17,
         "teamId": "",
         "teamName": "Estoril",
         "value": 0.5,
         "played": 4
-      },
-      {
-        "rank": 17,
-        "teamId": "",
-        "teamName": "Rio Ave",
-        "value": 0.33,
-        "played": 3
       },
       {
         "rank": 18,
@@ -154,42 +154,42 @@
         "played": 4
       },
       {
-        "rank": 3,
+        "rank": 2,
+        "teamId": "",
+        "teamName": "Benfica",
+        "value": 10.0,
+        "played": 4
+      },
+      {
+        "rank": 4,
+        "teamId": "",
+        "teamName": "Arouca",
+        "value": 9.0,
+        "played": 4
+      },
+      {
+        "rank": 5,
         "teamId": "",
         "teamName": "Santa Clara",
         "value": 8.0,
         "played": 4
       },
       {
-        "rank": 4,
-        "teamId": "",
-        "teamName": "Benfica",
-        "value": 7.0,
-        "played": 3
-      },
-      {
-        "rank": 4,
+        "rank": 6,
         "teamId": "",
         "teamName": "Gil Vicente",
         "value": 7.0,
         "played": 4
       },
       {
-        "rank": 6,
-        "teamId": "",
-        "teamName": "Arouca",
-        "value": 6.0,
-        "played": 3
-      },
-      {
-        "rank": 6,
+        "rank": 7,
         "teamId": "",
         "teamName": "Sporting Braga",
         "value": 6.0,
         "played": 3
       },
       {
-        "rank": 6,
+        "rank": 7,
         "teamId": "",
         "teamName": "Academico Viseu",
         "value": 6.0,
@@ -231,32 +231,32 @@
         "played": 4
       },
       {
-        "rank": 14,
+        "rank": 12,
+        "teamId": "",
+        "teamName": "Rio Ave",
+        "value": 4.0,
+        "played": 4
+      },
+      {
+        "rank": 15,
         "teamId": "",
         "teamName": "Nacional",
         "value": 3.0,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 16,
         "teamId": "",
         "teamName": "Famalicao",
         "value": 2.0,
         "played": 3
       },
       {
-        "rank": 15,
+        "rank": 16,
         "teamId": "",
         "teamName": "Estoril",
         "value": 2.0,
         "played": 4
-      },
-      {
-        "rank": 17,
-        "teamId": "",
-        "teamName": "Rio Ave",
-        "value": 1.0,
-        "played": 3
       },
       {
         "rank": 18,
@@ -282,25 +282,25 @@
         "played": 4
       },
       {
-        "rank": 3,
+        "rank": 2,
+        "teamId": "",
+        "teamName": "Benfica",
+        "value": 9.0,
+        "played": 4
+      },
+      {
+        "rank": 4,
+        "teamId": "",
+        "teamName": "Arouca",
+        "value": 8.0,
+        "played": 4
+      },
+      {
+        "rank": 5,
         "teamId": "",
         "teamName": "Santa Clara",
         "value": 7.0,
         "played": 4
-      },
-      {
-        "rank": 3,
-        "teamId": "",
-        "teamName": "Benfica",
-        "value": 7.0,
-        "played": 3
-      },
-      {
-        "rank": 3,
-        "teamId": "",
-        "teamName": "Arouca",
-        "value": 7.0,
-        "played": 3
       },
       {
         "rank": 6,
@@ -310,58 +310,58 @@
         "played": 4
       },
       {
-        "rank": 7,
+        "rank": 6,
+        "teamId": "",
+        "teamName": "Rio Ave",
+        "value": 6.0,
+        "played": 4
+      },
+      {
+        "rank": 8,
         "teamId": "",
         "teamName": "Alverca",
         "value": 5.0,
         "played": 4
       },
       {
-        "rank": 7,
+        "rank": 8,
         "teamId": "",
         "teamName": "Moreirense",
         "value": 5.0,
         "played": 4
       },
       {
-        "rank": 7,
+        "rank": 8,
         "teamId": "",
         "teamName": "Nacional",
         "value": 5.0,
         "played": 4
       },
       {
-        "rank": 10,
+        "rank": 11,
         "teamId": "",
         "teamName": "Gil Vicente",
         "value": 4.0,
         "played": 4
       },
       {
-        "rank": 10,
+        "rank": 11,
         "teamId": "",
         "teamName": "Academico Viseu",
         "value": 4.0,
         "played": 4
       },
       {
-        "rank": 10,
+        "rank": 11,
         "teamId": "",
         "teamName": "Maritimo",
         "value": 4.0,
         "played": 4
       },
       {
-        "rank": 13,
+        "rank": 14,
         "teamId": "",
         "teamName": "Sporting Braga",
-        "value": 3.0,
-        "played": 3
-      },
-      {
-        "rank": 13,
-        "teamId": "",
-        "teamName": "Rio Ave",
         "value": 3.0,
         "played": 3
       },
@@ -428,7 +428,7 @@
         "teamId": "",
         "teamName": "Arouca",
         "value": 3.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 5,
@@ -449,7 +449,7 @@
         "teamId": "",
         "teamName": "Benfica",
         "value": 4.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 9,
@@ -503,15 +503,15 @@
       {
         "rank": 16,
         "teamId": "",
-        "teamName": "Rio Ave",
-        "value": 9.0,
-        "played": 3
+        "teamName": "Nacional",
+        "value": 10.0,
+        "played": 4
       },
       {
         "rank": 17,
         "teamId": "",
-        "teamName": "Nacional",
-        "value": 10.0,
+        "teamName": "Rio Ave",
+        "value": 11.0,
         "played": 4
       },
       {
@@ -540,23 +540,23 @@
       {
         "rank": 2,
         "teamId": "",
-        "teamName": "Santa Clara",
+        "teamName": "Benfica",
         "value": 5.0,
         "played": 4
       },
       {
-        "rank": 4,
+        "rank": 2,
         "teamId": "",
         "teamName": "Arouca",
-        "value": 4.0,
-        "played": 3
+        "value": 5.0,
+        "played": 4
       },
       {
-        "rank": 5,
+        "rank": 2,
         "teamId": "",
-        "teamName": "Benfica",
-        "value": 3.0,
-        "played": 3
+        "teamName": "Santa Clara",
+        "value": 5.0,
+        "played": 4
       },
       {
         "rank": 6,
@@ -631,16 +631,16 @@
       {
         "rank": 16,
         "teamId": "",
-        "teamName": "Nacional",
+        "teamName": "Rio Ave",
         "value": -5.0,
         "played": 4
       },
       {
-        "rank": 17,
+        "rank": 16,
         "teamId": "",
-        "teamName": "Rio Ave",
-        "value": -6.0,
-        "played": 3
+        "teamName": "Nacional",
+        "value": -5.0,
+        "played": 4
       },
       {
         "rank": 18,
@@ -666,42 +666,42 @@
         "played": 4
       },
       {
-        "rank": 3,
+        "rank": 2,
+        "teamId": "",
+        "teamName": "Benfica",
+        "value": 3.0,
+        "played": 4
+      },
+      {
+        "rank": 2,
+        "teamId": "",
+        "teamName": "Arouca",
+        "value": 3.0,
+        "played": 4
+      },
+      {
+        "rank": 5,
         "teamId": "",
         "teamName": "Santa Clara",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 3,
-        "teamId": "",
-        "teamName": "Benfica",
-        "value": 2.0,
-        "played": 3
-      },
-      {
-        "rank": 3,
+        "rank": 5,
         "teamId": "",
         "teamName": "Gil Vicente",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 3,
-        "teamId": "",
-        "teamName": "Arouca",
-        "value": 2.0,
-        "played": 3
-      },
-      {
-        "rank": 3,
+        "rank": 5,
         "teamId": "",
         "teamName": "Sporting Braga",
         "value": 2.0,
         "played": 3
       },
       {
-        "rank": 3,
+        "rank": 5,
         "teamId": "",
         "teamName": "Academico Viseu",
         "value": 2.0,
@@ -745,33 +745,33 @@
       {
         "rank": 9,
         "teamId": "",
+        "teamName": "Rio Ave",
+        "value": 1.0,
+        "played": 4
+      },
+      {
+        "rank": 9,
+        "teamId": "",
         "teamName": "Nacional",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 16,
         "teamId": "",
         "teamName": "Famalicao",
         "value": 0.0,
         "played": 3
       },
       {
-        "rank": 15,
+        "rank": 16,
         "teamId": "",
         "teamName": "Estoril",
         "value": 0.0,
         "played": 4
       },
       {
-        "rank": 15,
-        "teamId": "",
-        "teamName": "Rio Ave",
-        "value": 0.0,
-        "played": 3
-      },
-      {
-        "rank": 15,
+        "rank": 16,
         "teamId": "",
         "teamName": "Casa Pia",
         "value": 0.0,
@@ -833,7 +833,7 @@
         "teamId": "",
         "teamName": "Benfica",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 7,
@@ -861,7 +861,7 @@
         "teamId": "",
         "teamName": "Rio Ave",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 13,
@@ -875,7 +875,7 @@
         "teamId": "",
         "teamName": "Arouca",
         "value": 0.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 13,
@@ -924,22 +924,15 @@
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Santa Clara",
+        "teamName": "Benfica",
         "value": 0.0,
         "played": 4
       },
       {
         "rank": 1,
         "teamId": "",
-        "teamName": "Benfica",
+        "teamName": "Santa Clara",
         "value": 0.0,
-        "played": 3
-      },
-      {
-        "rank": 5,
-        "teamId": "",
-        "teamName": "Gil Vicente",
-        "value": 1.0,
         "played": 4
       },
       {
@@ -947,7 +940,14 @@
         "teamId": "",
         "teamName": "Arouca",
         "value": 1.0,
-        "played": 3
+        "played": 4
+      },
+      {
+        "rank": 5,
+        "teamId": "",
+        "teamName": "Gil Vicente",
+        "value": 1.0,
+        "played": 4
       },
       {
         "rank": 5,
@@ -1008,16 +1008,16 @@
       {
         "rank": 12,
         "teamId": "",
-        "teamName": "Estoril",
+        "teamName": "Rio Ave",
         "value": 2.0,
         "played": 4
       },
       {
         "rank": 12,
         "teamId": "",
-        "teamName": "Rio Ave",
+        "teamName": "Estoril",
         "value": 2.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 17,
@@ -1075,33 +1075,33 @@
       {
         "rank": 6,
         "teamId": "",
-        "teamName": "Estrela Amadora",
-        "value": 1.67,
-        "played": 3
-      },
-      {
-        "rank": 7,
-        "teamId": "",
         "teamName": "Gil Vicente",
         "value": 1.33,
         "played": 3
       },
       {
-        "rank": 8,
+        "rank": 7,
         "teamId": "",
         "teamName": "Famalicao",
         "value": 1.25,
         "played": 4
       },
       {
-        "rank": 8,
+        "rank": 7,
+        "teamId": "",
+        "teamName": "Estrela Amadora",
+        "value": 1.25,
+        "played": 4
+      },
+      {
+        "rank": 7,
         "teamId": "",
         "teamName": "Sporting Braga",
         "value": 1.25,
         "played": 4
       },
       {
-        "rank": 8,
+        "rank": 7,
         "teamId": "",
         "teamName": "Arouca",
         "value": 1.25,
@@ -1146,15 +1146,15 @@
         "rank": 16,
         "teamId": "",
         "teamName": "Nacional",
-        "value": 0.33,
-        "played": 3
+        "value": 0.25,
+        "played": 4
       },
       {
         "rank": 17,
         "teamId": "",
         "teamName": "Guimaraes",
         "value": 0.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 17,
@@ -1212,7 +1212,7 @@
         "teamId": "",
         "teamName": "Estrela Amadora",
         "value": 5.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 6,
@@ -1275,14 +1275,14 @@
         "teamId": "",
         "teamName": "Nacional",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 17,
         "teamId": "",
         "teamName": "Guimaraes",
         "value": 0.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 17,
@@ -1319,7 +1319,7 @@
         "teamId": "",
         "teamName": "Estrela Amadora",
         "value": 8.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 5,
@@ -1364,56 +1364,56 @@
         "played": 3
       },
       {
-        "rank": 11,
+        "rank": 10,
+        "teamId": "",
+        "teamName": "Nacional",
+        "value": 4.0,
+        "played": 4
+      },
+      {
+        "rank": 12,
         "teamId": "",
         "teamName": "Arouca",
         "value": 3.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 12,
         "teamId": "",
         "teamName": "Moreirense",
         "value": 3.0,
         "played": 4
       },
       {
-        "rank": 11,
+        "rank": 12,
         "teamId": "",
         "teamName": "Guimaraes",
         "value": 3.0,
-        "played": 3
+        "played": 4
       },
       {
-        "rank": 14,
+        "rank": 15,
         "teamId": "",
         "teamName": "Gil Vicente",
         "value": 2.0,
         "played": 3
       },
       {
-        "rank": 14,
+        "rank": 15,
         "teamId": "",
         "teamName": "Casa Pia",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 14,
+        "rank": 15,
         "teamId": "",
         "teamName": "Rio Ave",
         "value": 2.0,
         "played": 4
       },
       {
-        "rank": 14,
-        "teamId": "",
-        "teamName": "Nacional",
-        "value": 2.0,
-        "played": 3
-      },
-      {
-        "rank": 14,
+        "rank": 15,
         "teamId": "",
         "teamName": "Estoril",
         "value": 2.0,
@@ -1492,59 +1492,59 @@
         "played": 4
       },
       {
-        "rank": 10,
-        "teamId": "",
-        "teamName": "Nacional",
-        "value": 5.0,
-        "played": 3
-      },
-      {
-        "rank": 12,
+        "rank": 11,
         "teamId": "",
         "teamName": "Alverca",
         "value": 6.0,
         "played": 3
       },
       {
-        "rank": 12,
+        "rank": 11,
         "teamId": "",
         "teamName": "Rio Ave",
         "value": 6.0,
         "played": 4
       },
       {
-        "rank": 12,
-        "teamId": "",
-        "teamName": "Guimaraes",
-        "value": 6.0,
-        "played": 3
-      },
-      {
-        "rank": 15,
-        "teamId": "",
-        "teamName": "Estrela Amadora",
-        "value": 7.0,
-        "played": 3
-      },
-      {
-        "rank": 15,
+        "rank": 13,
         "teamId": "",
         "teamName": "Maritimo",
         "value": 7.0,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 13,
         "teamId": "",
         "teamName": "Moreirense",
         "value": 7.0,
         "played": 4
       },
       {
-        "rank": 15,
+        "rank": 13,
         "teamId": "",
         "teamName": "Estoril",
         "value": 7.0,
+        "played": 4
+      },
+      {
+        "rank": 16,
+        "teamId": "",
+        "teamName": "Estrela Amadora",
+        "value": 8.0,
+        "played": 4
+      },
+      {
+        "rank": 16,
+        "teamId": "",
+        "teamName": "Nacional",
+        "value": 8.0,
+        "played": 4
+      },
+      {
+        "rank": 16,
+        "teamId": "",
+        "teamName": "Guimaraes",
+        "value": 8.0,
         "played": 4
       }
     ],
@@ -1595,11 +1595,11 @@
         "rank": 7,
         "teamId": "",
         "teamName": "Estrela Amadora",
-        "value": 1.0,
-        "played": 3
+        "value": 0.0,
+        "played": 4
       },
       {
-        "rank": 8,
+        "rank": 7,
         "teamId": "",
         "teamName": "Sporting Braga",
         "value": 0.0,
@@ -1643,33 +1643,33 @@
       {
         "rank": 14,
         "teamId": "",
-        "teamName": "Nacional",
-        "value": -3.0,
-        "played": 3
-      },
-      {
-        "rank": 14,
-        "teamId": "",
-        "teamName": "Guimaraes",
-        "value": -3.0,
-        "played": 3
-      },
-      {
-        "rank": 16,
-        "teamId": "",
         "teamName": "Moreirense",
         "value": -4.0,
         "played": 4
       },
       {
-        "rank": 16,
+        "rank": 14,
         "teamId": "",
         "teamName": "Rio Ave",
         "value": -4.0,
         "played": 4
       },
       {
-        "rank": 18,
+        "rank": 14,
+        "teamId": "",
+        "teamName": "Nacional",
+        "value": -4.0,
+        "played": 4
+      },
+      {
+        "rank": 17,
+        "teamId": "",
+        "teamName": "Guimaraes",
+        "value": -5.0,
+        "played": 4
+      },
+      {
+        "rank": 17,
         "teamId": "",
         "teamName": "Estoril",
         "value": -5.0,
@@ -1724,7 +1724,7 @@
         "teamId": "",
         "teamName": "Estrela Amadora",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 6,
@@ -1787,14 +1787,14 @@
         "teamId": "",
         "teamName": "Nacional",
         "value": 0.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 16,
         "teamId": "",
         "teamName": "Guimaraes",
         "value": 0.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 16,
@@ -1831,7 +1831,7 @@
         "teamId": "",
         "teamName": "Estrela Amadora",
         "value": 2.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 1,
@@ -1887,7 +1887,7 @@
         "teamId": "",
         "teamName": "Nacional",
         "value": 1.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 13,
@@ -1922,7 +1922,7 @@
         "teamId": "",
         "teamName": "Guimaraes",
         "value": 0.0,
-        "played": 3
+        "played": 4
       },
       {
         "rank": 13,
@@ -1962,42 +1962,42 @@
         "played": 4
       },
       {
-        "rank": 1,
-        "teamId": "",
-        "teamName": "Estrela Amadora",
-        "value": 0.0,
-        "played": 3
-      },
-      {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Benfica",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Famalicao",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 6,
+        "rank": 5,
+        "teamId": "",
+        "teamName": "Estrela Amadora",
+        "value": 1.0,
+        "played": 4
+      },
+      {
+        "rank": 5,
         "teamId": "",
         "teamName": "Sporting Braga",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Arouca",
         "value": 1.0,
         "played": 4
       },
       {
-        "rank": 6,
+        "rank": 5,
         "teamId": "",
         "teamName": "Gil Vicente",
         "value": 1.0,
@@ -2032,28 +2032,28 @@
         "played": 3
       },
       {
-        "rank": 11,
-        "teamId": "",
-        "teamName": "Nacional",
-        "value": 2.0,
-        "played": 3
-      },
-      {
-        "rank": 16,
+        "rank": 15,
         "teamId": "",
         "teamName": "Rio Ave",
         "value": 3.0,
         "played": 4
       },
       {
-        "rank": 16,
+        "rank": 15,
         "teamId": "",
-        "teamName": "Guimaraes",
+        "teamName": "Nacional",
         "value": 3.0,
-        "played": 3
+        "played": 4
       },
       {
-        "rank": 18,
+        "rank": 17,
+        "teamId": "",
+        "teamName": "Guimaraes",
+        "value": 4.0,
+        "played": 4
+      },
+      {
+        "rank": 17,
         "teamId": "",
         "teamName": "Estoril",
         "value": 4.0,
