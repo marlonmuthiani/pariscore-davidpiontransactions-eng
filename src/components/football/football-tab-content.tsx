@@ -56,6 +56,7 @@ import {
 import { FootballBacktestingView } from "./football-backtesting-view";
 import { FootballResultsView } from "./football-results-view";
 import { FootballNewsFeed } from "./football-news-feed";
+import { FootballTrendsView } from "./football-trends-view";
 import { TopMultiSport } from "@/components/dashboard/top-multi-sport";
 import {
   filterByStartWindow,
@@ -375,7 +376,7 @@ export function FootballTabContent() {
           </p>
         </div>
       )}
-      {/* Rangée interne des 4 sous-onglets football — miroir de la rangée
+      {/* Rangée interne des sous-onglets football — miroir de la rangée
           Flashscore du header (mêmes ids, même clé store sportSubTabs.football). */}
       <FootballSubTabs
         activeSubTab={footballSub}
@@ -445,6 +446,10 @@ export function FootballTabContent() {
           {!isLoading && prematchMatches.length > 0 ? (
             <FootballTop10Widget matches={prematchMatches} />
           ) : null}
+        </FootballSubTabPanel>
+      ) : footballSub === "trends" ? (
+        <FootballSubTabPanel sub="trends">
+          <FootballTrendsView />
         </FootballSubTabPanel>
       ) : footballSub === "backtesting" ? (
         <FootballSubTabPanel sub="backtesting">

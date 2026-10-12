@@ -176,7 +176,8 @@ connu en cas de coupure, expose `{ bundle, status, message, updatedAt }`.
 | football-league-rankings-widget | football-league-rankings-widget.tsx | Widget sidebar « Classements championnat » (buts/m, PPM, O1.5/U3.5, BTTS, corners O6.5/O7.5, xG/xGA × global/dom/ext × saison) |
 | FootballPressReviewWidget | FootballPressReviewWidget.tsx | Widget « Revue de Presse & Pronostics Médias » (3+ sources, consensus 1X2/Over/BTTS) |
 | football-tab-content | football-tab-content.tsx | Contenu de l'onglet football |
-| football-sub-tabs | football-sub-tabs.tsx | Sous-onglets football Calendrier/Top stratégies/Back Testing/Résultats (miroir de la rangée header, `?sub=`, panneau `FootballSubTabPanel`) |
+| football-sub-tabs | football-sub-tabs.tsx | Sous-onglets football Calendrier/Top stratégies/Tendances/Back Testing/Résultats (miroir de la rangée header, `?sub=`, panneau `FootballSubTabPanel`) |
+| football-trends-view | football-trends-view.tsx | Onglet Tendances : hit rates saison par ligue et par marché (Résultats/Buts/Corners/Cartons, filtres), prochain fixture + cote 1X2 + edge (route `/api/football/trends`, service `stats/football-trends-service.ts`) |
 | football-results-view | football-results-view.tsx | Onglet Résultats : scores 7 jours + verdict vert/rouge par stratégie + cotes + P&L 1u (route `/api/football/results/settled`) |
 | fotmob-calendar-table | fotmob-calendar-table.tsx | Tableau calendrier réplique FotMob clair (ligues, lignes, follow) |
 | fotmob-filter-bar | fotmob-filter-bar.tsx | Barre filtre FotMob clair (datepicker, En direct, Par heure, recherche) |
@@ -192,6 +193,7 @@ connu en cas de coupure, expose `{ bundle, status, message, updatedAt }`.
 | lineup-pitch | lineup-pitch.tsx | Terrain tactique interactif (compos probables/officiels, schéma, notes, absences) |
 | match-conditions-widget | match-conditions-widget.tsx | Widget conditions match (arbitre, sévérité cartons, stade, météo) |
 | match-timing-stats-view | match-timing-stats-view.tsx | Timing des buts style OddAlerts : 1er but moy. (match/marqué/encaissé), % fenêtres 0-15'/35-45'/70+', proba premier à marquer (moteur `stats/goal-timing-service.ts`) |
+| match-corner-stats-view | match-corner-stats-view.tsx | Stats corners style OddAlerts (îlot sombre) : For/Against AVG (totaux + PG), Total Corners PG, fréquences Over +5.5→+12.5, fenêtre L5/L10 (moteur `stats/corner-stats-service.ts`, historique pariscore.db) |
 | MatchPredictiveCard | MatchPredictiveCard.tsx | Carte analyse prédictive ML (badge tendance, résumé, 3 paris, zéro lien externe) |
 | momentum-chart | momentum-chart.tsx | Graphique momentum football (ticker d'événements agrégés inclus) |
 | pressure-timeline | pressure-timeline.tsx | Timeline de pression minute par minute (barres divergentes home/away, marqueurs but/corner/tir, diff-bar %, fenêtre Plein/10'/5') |

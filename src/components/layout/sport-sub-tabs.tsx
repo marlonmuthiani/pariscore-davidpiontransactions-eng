@@ -21,6 +21,7 @@ export const SPORT_SUB_TABS: Record<string, SportSubTab[]> = {
   football: [
     { id: "calendrier", label: "Calendrier" },
     { id: "top-strategies", label: "Top stratégies" },
+    { id: "trends", label: "Tendances" },
     { id: "backtesting", label: "Back Testing" },
     { id: "results", label: "Résultats" },
     { id: "actus", label: "Actus" },
