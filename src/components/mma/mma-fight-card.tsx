@@ -8,12 +8,13 @@ import { ConfidenceRing } from "@/components/shared/confidence-ring";
 import { FormTimeline } from "@/components/shared/form-timeline";
 import { PlayerAvatar } from "@/components/ui/player-avatar";
 import { cn } from "@/lib/utils";
-import { formatFightTime } from "@/lib/mma-time";
+import { formatFrenchFightTime } from "@/lib/mma-time";
 import { WatchButton } from "@/components/shared/watch-button";
 import { MmaAnalysisButton } from "./mma-analysis-button";
 import { MmaOddsDisplay } from "./mma-odds-display";
 import { MmaRadarChart, type MmaRadarData } from "./mma-radar-chart";
 import { MmaFighterProfileDialog, type MmaFighterProfile } from "./mma-fighter-profile-dialog";
+import { MmaFightCompareDialog } from "./mma-fight-compare-dialog";
 import { useFavorites } from "@/hooks/use-favorites-adapter";
 import { Star } from "lucide-react";
 
@@ -64,6 +65,9 @@ export type MmaFight = {
   /** EWMA radar stats per fighter. */
   stats_a?: MmaRadarData;
   stats_b?: MmaRadarData;
+  /** Modèle logistique maison [0..1] — 3ᵉ signal de buildFightVerdict. */
+  model_prob_a?: number;
+  model_prob_b?: number;
 };
 
 type Props = {
@@ -95,7 +99,7 @@ const WEIGHT_CLASS_COLORS: Record<string, string> = {
 };
 
 function formatCommenceTime(iso: string): string {
-  return formatFightTime(iso);
+  return formatFrenchFightTime(iso);
 }
 
 function timeUntil(iso: string): string | null {
@@ -118,6 +122,7 @@ function timeUntil(iso: string): string | null {
 export function MmaFightCard({ fight, index = 0 }: Props) {
   const [showStats, setShowStats] = useState(false);
   const [profileFighter, setProfileFighter] = useState<"a" | "b" | null>(null);
+  const [compareOpen, setCompareOpen] = useState(false);
   const { isFavorite, toggle } = useFavorites();
   const matchId = `mma:${fight.fighter_a}:${fight.fighter_b}:${fight.commence_time}`;
   const fav = isFavorite(matchId);
@@ -133,8 +138,23 @@ export function MmaFightCard({ fight, index = 0 }: Props) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: Math.min((index ?? 0) * 0.05, 0.3), ease: "easeOut" }}
       aria-label={`Combat ${fight.fighter_a} contre ${fight.fighter_b}`}
+      role="button"
+      tabIndex={0}
+      onClick={(e) => {
+        // Clic sur la carte → fiche comparative. Les boutons internes
+        // (étoile, profils, cotes, visionnage) gardent leur propre action.
+        if ((e.target as HTMLElement).closest("button, a")) return;
+        setCompareOpen(true);
+      }}
+      onKeyDown={(e) => {
+        if (e.target !== e.currentTarget) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setCompareOpen(true);
+        }
+      }}
       className={cn(
-        "group relative overflow-hidden rounded-xl border border-border",
+        "group relative cursor-pointer overflow-hidden rounded-xl border border-border",
         "bg-card text-foreground",
         "transition-all duration-200 ease-out",
         "hover:border-[var(--sport-mma)]/30 hover:shadow-[0_4px_24px_-4px_rgba(239,68,68,0.12)]",
@@ -308,6 +328,8 @@ export function MmaFightCard({ fight, index = 0 }: Props) {
           aiOddsB={fight.ai_odds_b}
           evA={fight.ev_a_pct}
           evB={fight.ev_b_pct}
+          psProbA={fight.ps_prob_a}
+          drawOdds={fight.draw_odds}
           fighterA={fight.fighter_a}
           fighterB={fight.fighter_b}
         />
@@ -404,6 +426,13 @@ export function MmaFightCard({ fight, index = 0 }: Props) {
         }
         open={profileFighter !== null}
         onOpenChange={(o) => { if (!o) setProfileFighter(null); }}
+      />
+
+      {/* Fiche comparative — clic sur la carte (photos, probas, verdict, Kelly) */}
+      <MmaFightCompareDialog
+        fight={fight}
+        open={compareOpen}
+        onOpenChange={setCompareOpen}
       />
     </motion.article>
   );

@@ -34,6 +34,20 @@ const gridTimeFmt = new Intl.DateTimeFormat("fr-FR", {
 });
 
 /**
+ * Heure de début de combat, France : « 05/10 23:30 » (Europe/Paris, CEST/CET
+ * géré par Intl — pas de tableau de décalage). Requête mission « formatage
+ * horaire France » : jour/mois sur 2 chiffres + heure, pour la carte de combat.
+ * Date illisible → ISO brut (convention projet : jamais d'exception).
+ */
+export function formatFrenchFightTime(utcDateString: string): string {
+  const d = new Date(utcDateString);
+  if (Number.isNaN(d.getTime())) return utcDateString;
+  // Intl sépare date et heure par une espace insécable (U+202F/U+00A0) : on
+  // normalise en espace simple pour un rendu/une comparaison prévisibles.
+  return gridTimeFmt.format(d).replace(/[\u00A0\u202F]/g, " ");
+}
+
+/**
  * Date + heure Paris pour la carte de combat.
  * Retourne l'ISO brut si la date est illisible, comme le font les autres
  * formateurs du projet (pas d'exception : un libellé moche vaut mieux qu'un

@@ -3,7 +3,7 @@
 // Paris) — deux affichages pour le meme combat, plus un mismatch d'hydratation.
 // Ces tests verrouillent le fuseau ET le passage heure d'ete/hiver.
 import { describe, expect, test } from "bun:test";
-import { formatFightTime, formatGridTime, parisDayKey } from "@/lib/mma-time";
+import { formatFightTime, formatFrenchFightTime, formatGridTime, parisDayKey } from "@/lib/mma-time";
 
 describe("formatFightTime — fuseau Europe/Paris", () => {
   test("hiver (UTC+1) : 23:30 UTC = 00:30 le lendemain à Paris", () => {
@@ -50,6 +50,34 @@ describe("formatGridTime — format compact", () => {
   });
   test("illisible -> chaine vide", () => {
     expect(formatGridTime("nope")).toBe("");
+  });
+});
+
+describe("formatFrenchFightTime — heure française carte de combat", () => {
+  test("hiver (UTC+1) : dd/MM HH:mm Paris avec decalage de jour", () => {
+    expect(formatFrenchFightTime("2026-01-15T23:30:00Z")).toBe("16/01 00:30");
+  });
+
+  test("ete (UTC+2 / CEST) : le meme UTC decale de 2h", () => {
+    expect(formatFrenchFightTime("2026-07-15T23:30:00Z")).toBe("16/07 01:30");
+  });
+
+  test("pas de fuseau local : resultat identique quelle que soit TZ", () => {
+    const iso = "2026-10-03T22:00:00Z";
+    const avant = formatFrenchFightTime(iso);
+    const env = process.env.TZ;
+    try {
+      process.env.TZ = "America/New_York";
+      expect(formatFrenchFightTime(iso)).toBe(avant);
+    } finally {
+      if (env === undefined) delete process.env.TZ;
+      else process.env.TZ = env;
+    }
+  });
+
+  test("date illisible -> ISO brut, jamais d'exception", () => {
+    expect(formatFrenchFightTime("pas-une-date")).toBe("pas-une-date");
+    expect(formatFrenchFightTime("")).toBe("");
   });
 });
 
