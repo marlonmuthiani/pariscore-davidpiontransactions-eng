@@ -147,12 +147,18 @@ const nextConfig: NextConfig = {
       // cascade getFighterPhoto(), mesurés sur les réponses en direct :
       //   assets.agentmma.com  — <slug>.png, source principale (service :593)
       //   a.espncdn.com        — /headshots/mma/, CDN licencié (service :607)
-      //   www.ufc.com          — og:image de la page athlete (service :714)
+      //   www.ufc.com / ufc.com — og:image de la page athlete (service :714).
+      //   Les deux formes sont servies : les hostnames Next sont EXACTS, donc
+      //   sans le domaine nu, la photo d'un combattant comme Evloev
+      //   (https://ufc.com/images/…png) plantait next/image →
+      //   next-image-unconfigured-host, et MmaErrorBoundary masquait tout
+      //   l'onglet MMA au lieu d'afficher les initiales.
       //   assets.oktagonmma.com — roster régional, mesuré sur le HTML servi
       // Wikipedia (upload/thumb.wikimedia.org) est déjà autorisé plus haut.
       { protocol: "https", hostname: "assets.agentmma.com" },
       { protocol: "https", hostname: "a.espncdn.com" },
       { protocol: "https", hostname: "www.ufc.com" },
+      { protocol: "https", hostname: "ufc.com" },
       { protocol: "https", hostname: "assets.oktagonmma.com" },
       // BBC — vignettes du fil d'actu MMA (mesurées 200 en hotlink le
       // 2026-10-03 : 32 items sur 32 ont une image, `ichef.bbci.co.uk`).

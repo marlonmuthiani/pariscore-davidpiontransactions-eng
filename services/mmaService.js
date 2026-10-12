@@ -788,7 +788,16 @@ async function _ufcPhoto(name) {
   if (!html) return null;
   const m = html.match(/property=["']og:image["'][^>]*content=["']([^"']+)["']/i);
   const url = m && m[1];
-  if (url && /ufc\.com\/images\//i.test(url) && /\.(png|jpe?g|webp)/i.test(url)) return url;
+  if (url && /ufc\.com\/images\//i.test(url) && /\.(png|jpe?g|webp)/i.test(url)) {
+    // Normalisation de l'hôte vers www.ufc.com : le meta og:image est servi
+    // tantôt avec, tantôt sans le sous-domaine. next/image valide les
+    // remotePatterns de façon EXACTE — la forme nue ("ufc.com") n'était pas
+    // dans next.config.ts, ce qui faisait planter next/image au rendu
+    // (next-image-unconfigured-host) et MmaErrorBoundary masquait TOUT
+    // l'onglet MMA (bug du 2026-10-11, combat Evloev). Les deux formes
+    // répondent 200 sur le CDN, la normalisation est sans effet de bord.
+    return url.replace(/^(https?:\/\/)ufc\.com\//i, '$1www.ufc.com/');
+  }
   return null;
 }
 
