@@ -4,7 +4,7 @@
     "leagueId": "saudi_pro_league",
     "leagueName": "Saudiarabia",
     "season": "2025/26+2026/27",
-    "lastUpdated": "2026-10-12T12:19:00.885552Z",
+    "lastUpdated": "2026-10-13T12:03:07.260778Z",
     "source": "soccerstats.com/formtable (cumulé 2 saisons)",
     "teamCount": 19,
     "window": 8,
@@ -13,75 +13,21 @@
   },
   "home": [
     {
-      "teamName": "Al Kholood",
+      "teamName": "Al Taawon",
       "gp": 5,
       "w": 1,
       "d": 2,
       "l": 2,
-      "gf": 3,
-      "ga": 8
+      "gf": 6,
+      "ga": 9
     },
     {
-      "teamName": "Al Khaleej",
+      "teamName": "Al Akhdoud",
       "gp": 5,
       "w": 1,
-      "d": 0,
-      "l": 4,
-      "gf": 6,
-      "ga": 14
-    },
-    {
-      "teamName": "Al Nassr",
-      "gp": 5,
-      "w": 5,
-      "d": 0,
-      "l": 0,
-      "gf": 12,
-      "ga": 2
-    },
-    {
-      "teamName": "Al Fateh",
-      "gp": 5,
-      "w": 2,
-      "d": 2,
-      "l": 1,
-      "gf": 6,
-      "ga": 5
-    },
-    {
-      "teamName": "Damak",
-      "gp": 5,
-      "w": 2,
       "d": 1,
-      "l": 2,
-      "gf": 8,
-      "ga": 5
-    },
-    {
-      "teamName": "Al Hazm",
-      "gp": 5,
-      "w": 4,
-      "d": 1,
-      "l": 1,
-      "gf": 9,
-      "ga": 5
-    },
-    {
-      "teamName": "Al Quadisiya",
-      "gp": 5,
-      "w": 3,
-      "d": 2,
-      "l": 0,
-      "gf": 11,
-      "ga": 4
-    },
-    {
-      "teamName": "Al Shabab",
-      "gp": 5,
-      "w": 2,
-      "d": 1,
-      "l": 2,
-      "gf": 11,
+      "l": 3,
+      "gf": 5,
       "ga": 14
     },
     {
@@ -94,22 +40,13 @@
       "ga": 6
     },
     {
-      "teamName": "Al Taawon",
-      "gp": 5,
-      "w": 1,
-      "d": 2,
-      "l": 2,
-      "gf": 6,
-      "ga": 9
-    },
-    {
-      "teamName": "Al Najma",
+      "teamName": "Al Fateh",
       "gp": 5,
       "w": 2,
-      "d": 1,
-      "l": 2,
+      "d": 2,
+      "l": 1,
       "gf": 6,
-      "ga": 11
+      "ga": 5
     },
     {
       "teamName": "Al Ahli Jeddah",
@@ -121,22 +58,67 @@
       "ga": 2
     },
     {
-      "teamName": "Al Riyadh",
+      "teamName": "Damak",
       "gp": 5,
       "w": 2,
       "d": 1,
       "l": 2,
-      "gf": 4,
+      "gf": 8,
+      "ga": 5
+    },
+    {
+      "teamName": "Al Najma",
+      "gp": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "gf": 6,
+      "ga": 11
+    },
+    {
+      "teamName": "Al Hazm",
+      "gp": 5,
+      "w": 4,
+      "d": 1,
+      "l": 1,
+      "gf": 9,
+      "ga": 5
+    },
+    {
+      "teamName": "Al Khaleej",
+      "gp": 5,
+      "w": 1,
+      "d": 0,
+      "l": 4,
+      "gf": 6,
+      "ga": 14
+    },
+    {
+      "teamName": "Neom",
+      "gp": 5,
+      "w": 4,
+      "d": 0,
+      "l": 1,
+      "gf": 11,
       "ga": 6
     },
     {
-      "teamName": "Al Akhdoud",
+      "teamName": "Al Shabab",
       "gp": 5,
-      "w": 1,
+      "w": 2,
       "d": 1,
-      "l": 3,
-      "gf": 5,
+      "l": 2,
+      "gf": 11,
       "ga": 14
+    },
+    {
+      "teamName": "Al Quadisiya",
+      "gp": 5,
+      "w": 3,
+      "d": 2,
+      "l": 0,
+      "gf": 11,
+      "ga": 4
     },
     {
       "teamName": "Al Hilal",
@@ -148,21 +130,39 @@
       "ga": 6
     },
     {
+      "teamName": "Al Kholood",
+      "gp": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 3,
+      "ga": 8
+    },
+    {
+      "teamName": "Al Riyadh",
+      "gp": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "gf": 4,
+      "ga": 6
+    },
+    {
+      "teamName": "Al Nassr",
+      "gp": 5,
+      "w": 5,
+      "d": 0,
+      "l": 0,
+      "gf": 12,
+      "ga": 2
+    },
+    {
       "teamName": "Al Feiha",
       "gp": 5,
       "w": 2,
       "d": 1,
       "l": 2,
       "gf": 8,
-      "ga": 6
-    },
-    {
-      "teamName": "Neom",
-      "gp": 5,
-      "w": 4,
-      "d": 0,
-      "l": 1,
-      "gf": 11,
       "ga": 6
     },
     {
@@ -177,40 +177,13 @@
   ],
   "away": [
     {
-      "teamName": "Al Kholood",
-      "gp": 5,
-      "w": 2,
-      "d": 1,
-      "l": 2,
-      "gf": 6,
-      "ga": 11
-    },
-    {
-      "teamName": "Al Khaleej",
+      "teamName": "Al Taawon",
       "gp": 5,
       "w": 1,
       "d": 2,
       "l": 2,
-      "gf": 5,
+      "gf": 8,
       "ga": 8
-    },
-    {
-      "teamName": "Al Nassr",
-      "gp": 5,
-      "w": 3,
-      "d": 1,
-      "l": 1,
-      "gf": 12,
-      "ga": 6
-    },
-    {
-      "teamName": "Al Fateh",
-      "gp": 5,
-      "w": 0,
-      "d": 2,
-      "l": 3,
-      "gf": 5,
-      "ga": 9
     },
     {
       "teamName": "Al Diraiyah",
@@ -222,40 +195,13 @@
       "ga": 4
     },
     {
-      "teamName": "Damak",
+      "teamName": "Al Akhdoud",
       "gp": 5,
       "w": 1,
       "d": 1,
       "l": 4,
-      "gf": 4,
-      "ga": 11
-    },
-    {
-      "teamName": "Al Hazm",
-      "gp": 5,
-      "w": 0,
-      "d": 2,
-      "l": 3,
       "gf": 3,
       "ga": 9
-    },
-    {
-      "teamName": "Al Quadisiya",
-      "gp": 5,
-      "w": 5,
-      "d": 0,
-      "l": 0,
-      "gf": 15,
-      "ga": 2
-    },
-    {
-      "teamName": "Al Shabab",
-      "gp": 5,
-      "w": 1,
-      "d": 2,
-      "l": 2,
-      "gf": 8,
-      "ga": 6
     },
     {
       "teamName": "Al Ittihad",
@@ -267,22 +213,13 @@
       "ga": 9
     },
     {
-      "teamName": "Al Taawon",
-      "gp": 5,
-      "w": 1,
-      "d": 2,
-      "l": 2,
-      "gf": 8,
-      "ga": 8
-    },
-    {
-      "teamName": "Al Najma",
+      "teamName": "Al Fateh",
       "gp": 5,
       "w": 0,
-      "d": 1,
-      "l": 4,
-      "gf": 2,
-      "ga": 14
+      "d": 2,
+      "l": 3,
+      "gf": 5,
+      "ga": 9
     },
     {
       "teamName": "Al Ahli Jeddah",
@@ -294,22 +231,67 @@
       "ga": 6
     },
     {
-      "teamName": "Al Riyadh",
-      "gp": 5,
-      "w": 1,
-      "d": 1,
-      "l": 3,
-      "gf": 6,
-      "ga": 10
-    },
-    {
-      "teamName": "Al Akhdoud",
+      "teamName": "Damak",
       "gp": 5,
       "w": 1,
       "d": 1,
       "l": 4,
+      "gf": 4,
+      "ga": 11
+    },
+    {
+      "teamName": "Al Najma",
+      "gp": 5,
+      "w": 0,
+      "d": 1,
+      "l": 4,
+      "gf": 2,
+      "ga": 14
+    },
+    {
+      "teamName": "Al Hazm",
+      "gp": 5,
+      "w": 0,
+      "d": 2,
+      "l": 3,
       "gf": 3,
       "ga": 9
+    },
+    {
+      "teamName": "Al Khaleej",
+      "gp": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 5,
+      "ga": 8
+    },
+    {
+      "teamName": "Al Shabab",
+      "gp": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 8,
+      "ga": 6
+    },
+    {
+      "teamName": "Neom",
+      "gp": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "gf": 6,
+      "ga": 4
+    },
+    {
+      "teamName": "Al Quadisiya",
+      "gp": 5,
+      "w": 5,
+      "d": 0,
+      "l": 0,
+      "gf": 15,
+      "ga": 2
     },
     {
       "teamName": "Al Hilal",
@@ -321,6 +303,33 @@
       "ga": 2
     },
     {
+      "teamName": "Al Kholood",
+      "gp": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "gf": 6,
+      "ga": 11
+    },
+    {
+      "teamName": "Al Riyadh",
+      "gp": 5,
+      "w": 1,
+      "d": 1,
+      "l": 3,
+      "gf": 6,
+      "ga": 10
+    },
+    {
+      "teamName": "Al Nassr",
+      "gp": 5,
+      "w": 3,
+      "d": 1,
+      "l": 1,
+      "gf": 12,
+      "ga": 6
+    },
+    {
       "teamName": "Al Feiha",
       "gp": 5,
       "w": 1,
@@ -328,15 +337,6 @@
       "l": 3,
       "gf": 6,
       "ga": 8
-    },
-    {
-      "teamName": "Neom",
-      "gp": 5,
-      "w": 2,
-      "d": 1,
-      "l": 2,
-      "gf": 6,
-      "ga": 4
     },
     {
       "teamName": "Al Ittifaq",

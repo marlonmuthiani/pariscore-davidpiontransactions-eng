@@ -4,7 +4,7 @@
     "leagueId": "epl",
     "leagueName": "England",
     "season": "2025/26+2026/27",
-    "lastUpdated": "2026-10-12T12:17:22.674472Z",
+    "lastUpdated": "2026-10-13T12:01:33.011852Z",
     "source": "soccerstats.com/formtable (cumulé 2 saisons)",
     "teamCount": 23,
     "window": 8,
@@ -12,24 +12,6 @@
     "partial": true
   },
   "home": [
-    {
-      "teamName": "Wolves",
-      "gp": 5,
-      "w": 1,
-      "d": 2,
-      "l": 2,
-      "gf": 6,
-      "ga": 7
-    },
-    {
-      "teamName": "Everton",
-      "gp": 5,
-      "w": 2,
-      "d": 2,
-      "l": 1,
-      "gf": 8,
-      "ga": 5
-    },
     {
       "teamName": "Liverpool",
       "gp": 5,
@@ -40,40 +22,13 @@
       "ga": 7
     },
     {
-      "teamName": "Newcastle Utd",
-      "gp": 5,
-      "w": 2,
-      "d": 2,
-      "l": 1,
-      "gf": 10,
-      "ga": 9
-    },
-    {
-      "teamName": "Hull",
-      "gp": 3,
-      "w": 1,
-      "d": 2,
-      "l": 0,
-      "gf": 4,
-      "ga": 2
-    },
-    {
-      "teamName": "Coventry City",
-      "gp": 2,
-      "w": 0,
-      "d": 0,
-      "l": 2,
-      "gf": 0,
-      "ga": 6
-    },
-    {
-      "teamName": "Arsenal",
+      "teamName": "Manchester City",
       "gp": 5,
       "w": 4,
       "d": 0,
       "l": 0,
-      "gf": 11,
-      "ga": 4
+      "gf": 12,
+      "ga": 6
     },
     {
       "teamName": "West Ham Utd",
@@ -85,13 +40,22 @@
       "ga": 3
     },
     {
-      "teamName": "Bournemouth",
+      "teamName": "Wolves",
       "gp": 5,
-      "w": 0,
-      "d": 4,
-      "l": 1,
+      "w": 1,
+      "d": 2,
+      "l": 2,
       "gf": 6,
-      "ga": 6
+      "ga": 7
+    },
+    {
+      "teamName": "Aston Villa",
+      "gp": 5,
+      "w": 1,
+      "d": 1,
+      "l": 3,
+      "gf": 7,
+      "ga": 8
     },
     {
       "teamName": "Leeds Utd",
@@ -103,6 +67,24 @@
       "ga": 4
     },
     {
+      "teamName": "Arsenal",
+      "gp": 5,
+      "w": 4,
+      "d": 0,
+      "l": 0,
+      "gf": 11,
+      "ga": 4
+    },
+    {
+      "teamName": "Crystal Palace",
+      "gp": 5,
+      "w": 2,
+      "d": 1,
+      "l": 3,
+      "gf": 8,
+      "ga": 11
+    },
+    {
       "teamName": "Sunderland",
       "gp": 5,
       "w": 2,
@@ -112,12 +94,75 @@
       "ga": 7
     },
     {
+      "teamName": "Nottm Forest",
+      "gp": 5,
+      "w": 0,
+      "d": 2,
+      "l": 2,
+      "gf": 2,
+      "ga": 4
+    },
+    {
+      "teamName": "Tottenham",
+      "gp": 5,
+      "w": 0,
+      "d": 2,
+      "l": 3,
+      "gf": 4,
+      "ga": 9
+    },
+    {
+      "teamName": "Brighton",
+      "gp": 5,
+      "w": 3,
+      "d": 1,
+      "l": 1,
+      "gf": 11,
+      "ga": 3
+    },
+    {
+      "teamName": "Coventry City",
+      "gp": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "gf": 4,
+      "ga": 7
+    },
+    {
+      "teamName": "Manchester United",
+      "gp": 5,
+      "w": 3,
+      "d": 1,
+      "l": 1,
+      "gf": 11,
+      "ga": 7
+    },
+    {
       "teamName": "Ipswich Town",
       "gp": 3,
       "w": 2,
       "d": 0,
       "l": 1,
       "gf": 4,
+      "ga": 4
+    },
+    {
+      "teamName": "Bournemouth",
+      "gp": 5,
+      "w": 0,
+      "d": 4,
+      "l": 1,
+      "gf": 6,
+      "ga": 6
+    },
+    {
+      "teamName": "Brentford",
+      "gp": 5,
+      "w": 2,
+      "d": 2,
+      "l": 0,
+      "gf": 9,
       "ga": 4
     },
     {
@@ -130,12 +175,30 @@
       "ga": 10
     },
     {
-      "teamName": "Tottenham",
+      "teamName": "Everton",
       "gp": 5,
-      "w": 0,
+      "w": 2,
       "d": 2,
+      "l": 1,
+      "gf": 8,
+      "ga": 5
+    },
+    {
+      "teamName": "Newcastle Utd",
+      "gp": 5,
+      "w": 2,
+      "d": 2,
+      "l": 1,
+      "gf": 10,
+      "ga": 9
+    },
+    {
+      "teamName": "Fulham",
+      "gp": 5,
+      "w": 1,
+      "d": 1,
       "l": 3,
-      "gf": 4,
+      "gf": 8,
       "ga": 9
     },
     {
@@ -148,97 +211,16 @@
       "ga": 9
     },
     {
-      "teamName": "Crystal Palace",
-      "gp": 5,
-      "w": 2,
-      "d": 1,
-      "l": 3,
-      "gf": 8,
-      "ga": 11
-    },
-    {
-      "teamName": "Brentford",
-      "gp": 5,
-      "w": 2,
+      "teamName": "Hull",
+      "gp": 3,
+      "w": 1,
       "d": 2,
       "l": 0,
-      "gf": 9,
-      "ga": 4
-    },
-    {
-      "teamName": "Manchester United",
-      "gp": 5,
-      "w": 3,
-      "d": 1,
-      "l": 1,
-      "gf": 11,
-      "ga": 7
-    },
-    {
-      "teamName": "Manchester City",
-      "gp": 5,
-      "w": 4,
-      "d": 0,
-      "l": 0,
-      "gf": 12,
-      "ga": 6
-    },
-    {
-      "teamName": "Aston Villa",
-      "gp": 5,
-      "w": 1,
-      "d": 1,
-      "l": 3,
-      "gf": 7,
-      "ga": 8
-    },
-    {
-      "teamName": "Brighton",
-      "gp": 5,
-      "w": 3,
-      "d": 1,
-      "l": 1,
-      "gf": 11,
-      "ga": 3
-    },
-    {
-      "teamName": "Fulham",
-      "gp": 5,
-      "w": 1,
-      "d": 1,
-      "l": 3,
-      "gf": 8,
-      "ga": 9
-    },
-    {
-      "teamName": "Nottm Forest",
-      "gp": 5,
-      "w": 0,
-      "d": 2,
-      "l": 2,
-      "gf": 2,
-      "ga": 4
+      "gf": 4,
+      "ga": 2
     }
   ],
   "away": [
-    {
-      "teamName": "Wolves",
-      "gp": 5,
-      "w": 0,
-      "d": 2,
-      "l": 3,
-      "gf": 2,
-      "ga": 10
-    },
-    {
-      "teamName": "Everton",
-      "gp": 5,
-      "w": 0,
-      "d": 4,
-      "l": 1,
-      "gf": 6,
-      "ga": 6
-    },
     {
       "teamName": "Liverpool",
       "gp": 5,
@@ -249,40 +231,13 @@
       "ga": 6
     },
     {
-      "teamName": "Newcastle Utd",
+      "teamName": "Manchester City",
       "gp": 5,
-      "w": 2,
-      "d": 0,
-      "l": 3,
-      "gf": 6,
-      "ga": 9
-    },
-    {
-      "teamName": "Hull",
-      "gp": 3,
-      "w": 1,
+      "w": 4,
       "d": 1,
-      "l": 1,
-      "gf": 4,
-      "ga": 4
-    },
-    {
-      "teamName": "Coventry City",
-      "gp": 3,
-      "w": 1,
-      "d": 0,
-      "l": 2,
-      "gf": 1,
-      "ga": 4
-    },
-    {
-      "teamName": "Arsenal",
-      "gp": 5,
-      "w": 3,
-      "d": 0,
-      "l": 1,
-      "gf": 7,
-      "ga": 5
+      "l": 0,
+      "gf": 12,
+      "ga": 3
     },
     {
       "teamName": "West Ham Utd",
@@ -294,13 +249,22 @@
       "ga": 10
     },
     {
-      "teamName": "Bournemouth",
+      "teamName": "Wolves",
       "gp": 5,
-      "w": 1,
+      "w": 0,
+      "d": 2,
+      "l": 3,
+      "gf": 2,
+      "ga": 10
+    },
+    {
+      "teamName": "Aston Villa",
+      "gp": 5,
+      "w": 2,
       "d": 2,
       "l": 2,
-      "gf": 6,
-      "ga": 10
+      "gf": 5,
+      "ga": 9
     },
     {
       "teamName": "Leeds Utd",
@@ -312,6 +276,42 @@
       "ga": 6
     },
     {
+      "teamName": "Arsenal",
+      "gp": 5,
+      "w": 3,
+      "d": 0,
+      "l": 1,
+      "gf": 7,
+      "ga": 5
+    },
+    {
+      "teamName": "Nottm Forest",
+      "gp": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "gf": 10,
+      "ga": 9
+    },
+    {
+      "teamName": "Crystal Palace",
+      "gp": 5,
+      "w": 2,
+      "d": 2,
+      "l": 2,
+      "gf": 5,
+      "ga": 8
+    },
+    {
+      "teamName": "Tottenham",
+      "gp": 5,
+      "w": 0,
+      "d": 2,
+      "l": 2,
+      "gf": 3,
+      "ga": 7
+    },
+    {
       "teamName": "Sunderland",
       "gp": 5,
       "w": 1,
@@ -321,12 +321,57 @@
       "ga": 12
     },
     {
+      "teamName": "Brighton",
+      "gp": 5,
+      "w": 3,
+      "d": 0,
+      "l": 2,
+      "gf": 12,
+      "ga": 6
+    },
+    {
+      "teamName": "Coventry City",
+      "gp": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "gf": 1,
+      "ga": 4
+    },
+    {
+      "teamName": "Manchester United",
+      "gp": 5,
+      "w": 1,
+      "d": 3,
+      "l": 1,
+      "gf": 6,
+      "ga": 7
+    },
+    {
       "teamName": "Ipswich Town",
       "gp": 3,
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 5,
+      "ga": 8
+    },
+    {
+      "teamName": "Bournemouth",
+      "gp": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 6,
+      "ga": 10
+    },
+    {
+      "teamName": "Brentford",
+      "gp": 5,
+      "w": 1,
+      "d": 4,
+      "l": 0,
+      "gf": 7,
       "ga": 8
     },
     {
@@ -339,13 +384,31 @@
       "ga": 11
     },
     {
-      "teamName": "Tottenham",
+      "teamName": "Everton",
+      "gp": 5,
+      "w": 0,
+      "d": 4,
+      "l": 1,
+      "gf": 6,
+      "ga": 6
+    },
+    {
+      "teamName": "Newcastle Utd",
+      "gp": 5,
+      "w": 2,
+      "d": 0,
+      "l": 3,
+      "gf": 6,
+      "ga": 11
+    },
+    {
+      "teamName": "Fulham",
       "gp": 5,
       "w": 0,
       "d": 2,
-      "l": 2,
+      "l": 3,
       "gf": 3,
-      "ga": 7
+      "ga": 6
     },
     {
       "teamName": "Burnley",
@@ -357,76 +420,13 @@
       "ga": 12
     },
     {
-      "teamName": "Crystal Palace",
-      "gp": 5,
-      "w": 2,
-      "d": 2,
-      "l": 2,
-      "gf": 5,
-      "ga": 8
-    },
-    {
-      "teamName": "Brentford",
-      "gp": 5,
+      "teamName": "Hull",
+      "gp": 3,
       "w": 1,
-      "d": 4,
-      "l": 0,
-      "gf": 7,
-      "ga": 8
-    },
-    {
-      "teamName": "Aston Villa",
-      "gp": 5,
-      "w": 2,
-      "d": 2,
-      "l": 2,
-      "gf": 5,
-      "ga": 9
-    },
-    {
-      "teamName": "Manchester City",
-      "gp": 5,
-      "w": 4,
       "d": 1,
-      "l": 0,
-      "gf": 12,
-      "ga": 3
-    },
-    {
-      "teamName": "Nottm Forest",
-      "gp": 5,
-      "w": 2,
-      "d": 1,
-      "l": 2,
-      "gf": 10,
-      "ga": 9
-    },
-    {
-      "teamName": "Brighton",
-      "gp": 5,
-      "w": 3,
-      "d": 0,
-      "l": 2,
-      "gf": 12,
-      "ga": 6
-    },
-    {
-      "teamName": "Manchester United",
-      "gp": 5,
-      "w": 1,
-      "d": 3,
       "l": 1,
-      "gf": 6,
-      "ga": 7
-    },
-    {
-      "teamName": "Fulham",
-      "gp": 5,
-      "w": 0,
-      "d": 2,
-      "l": 3,
-      "gf": 3,
-      "ga": 6
+      "gf": 4,
+      "ga": 4
     }
   ]
 }
