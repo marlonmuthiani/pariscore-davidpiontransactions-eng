@@ -9,7 +9,7 @@ import useSWR from "swr";
 import type {
   FootballTrendsPayload,
   TrendCategory,
-} from "@/lib/stats/football-trends-service";
+} from "@/lib/stats/football-trends-shared";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 

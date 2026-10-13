@@ -6,6 +6,10 @@
 // marché = hit rate saison de la ligue, exactement la donnée des cartes
 // OddAlerts /trends) et `fixturesJson` (prochains matchs + cotes 1X2).
 //
+// ⚠️ SERVEUR UNIQUEMENT : ce module importe node:path + SQLite — tout import
+// depuis un composant client casse le build Next.js (frontière =
+// football-trends-shared.ts, cf. échec deploy 2026-10-12).
+//
 // Granularité LIGUE (pas équipe) : pariscore.db n'a pas d'historique football
 // par équipe. ponytail: brancher football_match_history (cf. rapport
 // .context/RAPPORT-ODDALERTS-TRENDS.md §6) pour passer en granularité équipe.
@@ -14,67 +18,31 @@
 // src/lib/leagues-stats/db.ts — jamais de concurrence avec les writers.
 
 import path from "node:path";
+import {
+  computeEdge,
+  type TrendCategory,
+  type TrendEntry,
+  type TrendsMarketGroup,
+  type FootballTrendsPayload,
+  type TrendsQuery,
+} from "./football-trends-shared";
 
-/* ─── Types publics ─── */
+// Ré-exports : la route API consomme tout depuis le service, les types/const
+// partagés restent disponibles côté serveur aussi.
+export {
+  TREND_CATEGORIES,
+  computeEdge,
+} from "./football-trends-shared";
+export type {
+  TrendCategory,
+  TrendFixture,
+  TrendEntry,
+  TrendsMarketGroup,
+  FootballTrendsPayload,
+  TrendsQuery,
+} from "./football-trends-shared";
 
-export type TrendCategory = "resultats" | "buts" | "corners" | "cartons";
-
-export type TrendFixture = {
-  kickoff: string | null;
-  homeName: string;
-  homeBadge: string | null;
-  awayName: string;
-  awayBadge: string | null;
-  oddsHome: number | null;
-  oddsDraw: number | null;
-  oddsAway: number | null;
-};
-
-export type TrendEntry = {
-  marketId: string;
-  label: string;
-  category: TrendCategory;
-  leagueId: string;
-  leagueName: string;
-  country: string;
-  logoUrl: string | null;
-  seasonLabel: string | null;
-  /** Hit rate saison de la ligue sur le marché (%, = champ pct d'OddAlerts). */
-  hitPct: number;
-  /** Matchs satisfaisant le marché / matchs joués. */
-  hits: number;
-  gamesPlayed: number;
-  /** Cote 1X2 mappée au marché (uniquement marchés Résultats). */
-  odds: number | null;
-  /** hitPct − 100/cote, en points. Null sans cote mappée. */
-  edge: number | null;
-  fixture: TrendFixture | null;
-};
-
-export type TrendsMarketGroup = {
-  marketId: string;
-  label: string;
-  category: TrendCategory;
-  entries: TrendEntry[];
-};
-
-export type FootballTrendsPayload = {
-  generatedAt: string;
-  leaguesScanned: number;
-  markets: TrendsMarketGroup[];
-};
-
-export type TrendsQuery = {
-  category?: TrendCategory | "all";
-  /** Matchs joués minimum pour qu'une ligue soit éligible. */
-  minGames?: number;
-  /** Hit rate minimum (%) pour qu'une ligue soit une « tendance ». */
-  minHitPct?: number;
-  /** Nombre max de ligues retournées par marché. */
-  limitPerMarket?: number;
-};
-
-/* ─── Catalogue des marchés ─── */
+/* ─── Catalogue des marchés (serveur) ─── */
 
 type MarketDef = {
   /** Clé de l'item dans statsJson (ex: "over_2_5_goals"). */
@@ -106,15 +74,6 @@ const MARKETS: MarketDef[] = [
   // Cartons
   { key: "over_3_5_cards", marketId: "over-3-5-cards", label: "Over 3.5 cartons", category: "cartons" },
   { key: "over_4_5_cards", marketId: "over-4-5-cards", label: "Over 4.5 cartons", category: "cartons" },
-];
-
-/** Catégories exposées à l'UI (filtres). */
-export const TREND_CATEGORIES: { id: TrendCategory | "all"; label: string }[] = [
-  { id: "all", label: "Tous" },
-  { id: "resultats", label: "Résultats" },
-  { id: "buts", label: "Buts" },
-  { id: "corners", label: "Corners" },
-  { id: "cartons", label: "Cartons" },
 ];
 
 /* ─── Accès SQLite readonly (pattern leagues-stats/db.ts) ─── */
@@ -184,16 +143,6 @@ function parseJsonSafe<T>(raw: string | null | undefined, fallback: T): T {
 /* ─── Calcul ─── */
 
 /**
- * Edge (points) : hit rate − probabilité implicite de la cote.
- * Formule OddAlerts (« Edge column: hit rate vs the bookmaker's implied odds »),
- * cote non dévigée. Retourne null si la cote est absente ou aberrante (≤ 1).
- */
-export function computeEdge(hitPct: number, odds: number | null): number | null {
-  if (odds == null || odds <= 1) return null;
-  return Math.round(hitPct - 100 / odds);
-}
-
-/**
  * Tendances football : pour chaque marché du catalogue, les ligues dont le hit
  * rate saison dépasse `minHitPct` (tri décroissant, top `limitPerMarket`).
  * Chaque entrée embarque le prochain fixture de la ligue et l'edge (marchés
@@ -242,7 +191,7 @@ export function getFootballTrends(query: TrendsQuery = {}): FootballTrendsPayloa
       const fixtures = parseJsonSafe<RawFixture[]>(row.fixturesJson as string, []);
       const raw = fixtures.find((f) => f.home?.name && f.away?.name) ?? null;
 
-      let fixture: TrendFixture | null = null;
+      let fixture: TrendEntry["fixture"] = null;
       if (raw) {
         fixture = {
           kickoff: raw.kickoffText ?? null,

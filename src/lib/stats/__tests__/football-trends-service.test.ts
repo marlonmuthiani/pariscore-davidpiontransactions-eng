@@ -3,7 +3,7 @@
 // typecheck strict de next build sur le VPS — TS2593).
 
 import { describe, expect, test } from "bun:test";
-import { computeEdge } from "../football-trends-service";
+import { computeEdge } from "../football-trends-shared";
 
 describe("computeEdge — formule OddAlerts (hit rate − probabilité implicite)", () => {
   test("OddAlerts reference : 91 % vs cote 1.25 → +11", () => {

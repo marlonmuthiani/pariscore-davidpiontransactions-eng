@@ -18,7 +18,7 @@ import {
   type TrendCategory,
   type TrendEntry,
   type TrendsMarketGroup,
-} from "@/lib/stats/football-trends-service";
+} from "@/lib/stats/football-trends-shared";
 import { CountryFlag } from "@/components/ui/country-flag";
 import { FOTMOB } from "@/components/football/fotmob-tokens";
 
